@@ -18,7 +18,7 @@ export const Header = styled.header`
   .nav-header {
     display: flex;
     justify-content: space-between;
-    margin-right: -5rem;
+    margin-right: 0rem;
   }
   .nav-header * {
     text-decoration: none;
