@@ -99,7 +99,7 @@ function Pothography() {
                                 <ul className='nav-header'>
                                     <li>Contact</li>
                                     <li>linguas</li>
-                                    <li><RiMenu3Fill className='menuToggle' /></li>
+                                    <li><RiMenu3Fill className='menuToggle' style={{visibility:"hidden"}} /></li>
                                 </ul>
                             </div>
                         </div>
@@ -121,9 +121,9 @@ function Pothography() {
                         </div>
                     </Header>
                     {/* ////////////////////////////////////////////////// */}
-                    <Box sx={{ display: 'flex' }}>
+                    <Box sx={{ display: 'flex' }} >
                         <CssBaseline />
-                        <AppBar position="fixed" open={open}  id="toggletest" style={{backgroundColor: "rgb(00, 00, 00, 0.0)", width:"3rem", marginRight:"5.8rem", marginTop:"0.5rem", boxShadow:"none"}}
+                        <AppBar position="fixed" open={open}  id="toggletest" style={{backgroundColor: "rgb(00, 00, 00, 0.0)", width:"3rem", marginRight:"9.5rem", marginTop:"0.5rem", boxShadow:"none", color:"#d66939"}}
                         className='menuToggle'
                         >                      
                                 <IconButton
@@ -133,7 +133,7 @@ function Pothography() {
                                     onClick={handleDrawerOpen}
                                     sx={{ ...(open && { display: 'none' }) }}
                                 >
-                                    <RiMenu3Fill className='menuToggle' />
+                                    <RiMenu3Fill className='menuToggle'/>
                                 </IconButton>              
                         </AppBar>
 

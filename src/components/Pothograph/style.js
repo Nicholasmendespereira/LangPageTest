@@ -59,8 +59,9 @@ export const Header = styled.header`
   .social {
     font-size: 2rem;
     margin-left: 5rem;
+    transition: all 1000ms;
     &:hover {
-      transition: 100ms;
+      transition: 500ms;
       /* -o-transition: 0.5s ease-in; */
       font-size: 4rem;
     }
