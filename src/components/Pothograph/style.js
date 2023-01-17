@@ -77,10 +77,14 @@ export const Header = styled.header`
     font-family: "Nexa Bold";
   }
   #buttonContent {
+    height: 2.5rem;
+    width: 12rem;
     font-family: "Nexa Regular";
     background-color: rgb(00, 00, 00, 0);
     border: 2px solid #d66939;
+    transition: all 1000ms;
     &:hover {
+      color: white;
       transition: 1000ms;
       background-color: #d66939;
     }
