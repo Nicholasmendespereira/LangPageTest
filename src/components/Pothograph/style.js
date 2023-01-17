@@ -2,12 +2,37 @@ import styled from "styled-components";
 import background from "../../assets/background-header.jpg";
 import FontsProviders from "../../FontsProviders.css";
 
+export const Tittle = styled.h2`
+font-weight: bold;
+font-size: 1.2rem;
+`;
+export const SubTittle = styled.h3`
+font-size:1rem;
+font-weight: bolder;
+margin-right: 1rem;
+`;
+export const Button = styled.button`
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+export const BarColor = styled.div`
+height: 0.5rem;
+background-color: #d66939;
+`;
+export const ContainerFlex = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+`;
 export const Header = styled.header`
   margin: 0 auto;
   background-image: url(${background});
   background-size: 100rem;
   background-repeat: no-repeat;
-  height: 80rem;
+  height: 60rem;
   width: 98.7vw;
 
   .container-header {
@@ -91,10 +116,13 @@ export const Header = styled.header`
   }
 `;
 export const Content = styled.section``;
-export const Button = styled.button`
-  cursor: pointer;
 
-  &:hover {
-    opacity: 0.6;
-  }
-`;
+export const Content2 = styled.div`
+  height: 30rem;
+  .content2 {
+  width: 50vw;
+  margin-right: 10rem;
+}
+  `;
+
+

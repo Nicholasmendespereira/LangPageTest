@@ -1,4 +1,4 @@
-import { Header, Button } from './style'
+import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex } from './style'
 
 
 import * as React from 'react';
@@ -7,13 +7,13 @@ import Grid from '@mui/material/Grid';
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
+
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -27,31 +27,14 @@ import MailIcon from '@mui/icons-material/Mail';
 import { TiSocialLinkedin, TiSocialGithub, TiSocialYoutube, TiSocialInstagram } from 'react-icons/ti'
 import { SiReact } from 'react-icons/si'
 import { RiMenu3Fill } from 'react-icons/ri'
+import { HiOutlinePhotograph } from 'react-icons/H'
+
 
 
 
 
 function Pothography() {
     const drawerWidth = 240;
-    const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-        ({ theme, open }) => ({
-            flexGrow: 1,
-            padding: theme.spacing(3),
-            transition: theme.transitions.create('margin', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen,
-            }),
-            marginRight: -drawerWidth,
-            ...(open && {
-                transition: theme.transitions.create('margin', {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-                marginRight: 0,
-            }),
-        }),
-    );
-
     const AppBar = styled(MuiAppBar, {
         shouldForwardProp: (prop) => prop !== 'open',
     })(({ theme, open }) => ({
@@ -185,7 +168,34 @@ function Pothography() {
                     {/* ////////////////////////////////////////////////// */}
                 </Grid>
                 <Grid item xs={12}>
-                    Content1
+                    <Content2>
+                    <Tittle>
+                    <h2>What can do for you</h2>
+                    </Tittle>                    
+                    <ContainerFlex> 
+                        <div><SubTittle>Photo shooting</SubTittle>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dignissimos laudantium magnam recusandae, amet sapiente. Quidem quam dignissimos consectetur ad sunt perferendis eveniet excepturi ipsa, tempora culpa minus dolores natus.</p>
+                        </div>
+                        <div><SubTittle>Video shooting</SubTittle>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat sed at quidem, officia eligendi eos tempore repudiandae, excepturi laborum corrupti et debitis qui repellendus consequuntur id. Labore, possimus modi!</p>
+                        </div>
+                        <div>
+                        <HiOutlinePhotograph/>
+                        <SubTittle>Retouch</SubTittle>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                        </div>
+                        <div><SubTittle>Sound recording</SubTittle>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                        </div>
+                    </ContainerFlex>
+                  
+                    <ContainerFlex>
+                      <BarColor className='content2'>                        
+                      </BarColor>
+                        <Tittle><h2>My lastest works</h2></Tittle>
+                    </ContainerFlex>
+                    
+                    </Content2>
                 </Grid>
                 <Grid item xs={12}>
                     Content2
