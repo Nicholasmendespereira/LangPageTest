@@ -1,5 +1,7 @@
 import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex } from './style'
-
+import img1 from '../../assets/img33.jpg'
+import img2 from '../../assets/img2.jpg'
+import img3 from '../../assets/img3.jpg'
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -27,7 +29,10 @@ import MailIcon from '@mui/icons-material/Mail';
 import { TiSocialLinkedin, TiSocialGithub, TiSocialYoutube, TiSocialInstagram } from 'react-icons/ti'
 import { SiReact } from 'react-icons/si'
 import { RiMenu3Fill } from 'react-icons/ri'
-import { HiOutlinePhotograph } from 'react-icons/H'
+import { HiOutlinePhotograph } from 'react-icons/hi'
+import { GiMicrophone } from 'react-icons/gi'
+import { BsCameraVideo } from 'react-icons/bs'
+import { AiOutlineCamera } from 'react-icons/ai'
 
 
 
@@ -82,7 +87,7 @@ function Pothography() {
                                 <ul className='nav-header'>
                                     <li>Contact</li>
                                     <li>linguas</li>
-                                    <li><RiMenu3Fill className='menuToggle' style={{visibility:"hidden"}} /></li>
+                                    <li><RiMenu3Fill className='menuToggle' style={{ visibility: "hidden" }} /></li>
                                 </ul>
                             </div>
                         </div>
@@ -106,18 +111,18 @@ function Pothography() {
                     {/* ////////////////////////////////////////////////// */}
                     <Box sx={{ display: 'flex' }} >
                         <CssBaseline />
-                        <AppBar position="fixed" open={open}  id="toggletest" style={{backgroundColor: "rgb(00, 00, 00, 0.0)", width:"3rem", marginRight:"9.5rem", marginTop:"0.5rem", boxShadow:"none", color:"#d66939"}}
-                        className='menuToggle'
-                        >                      
-                                <IconButton
-                                    color="inherit"
-                                    aria-label="open drawer"
-                                    edge="end"
-                                    onClick={handleDrawerOpen}
-                                    sx={{ ...(open && { display: 'none' }) }}
-                                >
-                                    <RiMenu3Fill className='menuToggle'/>
-                                </IconButton>              
+                        <AppBar position="fixed" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939" }}
+                            className='menuToggle'
+                        >
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={handleDrawerOpen}
+                                sx={{ ...(open && { display: 'none' }) }}
+                            >
+                                <RiMenu3Fill className='menuToggle' />
+                            </IconButton>
                         </AppBar>
 
                         <Drawer
@@ -150,7 +155,7 @@ function Pothography() {
                                     </ListItem>
                                 ))}
                             </List>
-                            <Divider /> 
+                            <Divider />
                             <List>
                                 {['All mail', 'Trash', 'Spam'].map((text, index) => (
                                     <ListItem key={text} disablePadding>
@@ -169,36 +174,45 @@ function Pothography() {
                 </Grid>
                 <Grid item xs={12}>
                     <Content2>
-                    <Tittle>
-                    <h2>What can do for you</h2>
-                    </Tittle>                    
-                    <ContainerFlex> 
-                        <div><SubTittle>Photo shooting</SubTittle>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dignissimos laudantium magnam recusandae, amet sapiente. Quidem quam dignissimos consectetur ad sunt perferendis eveniet excepturi ipsa, tempora culpa minus dolores natus.</p>
-                        </div>
-                        <div><SubTittle>Video shooting</SubTittle>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat sed at quidem, officia eligendi eos tempore repudiandae, excepturi laborum corrupti et debitis qui repellendus consequuntur id. Labore, possimus modi!</p>
-                        </div>
-                        <div>
-                        <HiOutlinePhotograph/>
-                        <SubTittle>Retouch</SubTittle>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
-                        </div>
-                        <div><SubTittle>Sound recording</SubTittle>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
-                        </div>
-                    </ContainerFlex>
-                  
-                    <ContainerFlex>
-                      <BarColor className='content2'>                        
-                      </BarColor>
-                        <Tittle><h2>My lastest works</h2></Tittle>
-                    </ContainerFlex>
-                    
+                        <Tittle>
+                            <h2>What can do for you</h2>
+                        </Tittle>
+                        <ContainerFlex>
+                            <div>
+                                <AiOutlineCamera className='iconContent2' />
+                                <SubTittle>Photo shooting</SubTittle>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dignissimos laudantium magnam recusandae, amet sapiente. Quidem quam dignissimos consectetur ad sunt perferendis eveniet excepturi ipsa, tempora culpa minus dolores natus.</p>
+                            </div>
+                            <div>
+                                <BsCameraVideo className='iconContent2' />
+                                <SubTittle>Video shooting</SubTittle>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat sed at quidem, officia eligendi eos tempore repudiandae, excepturi laborum corrupti et debitis qui repellendus consequuntur id. Labore, possimus modi!</p>
+                            </div>
+                            <div>
+                                <HiOutlinePhotograph className='iconContent2' />
+                                <SubTittle>Retouch</SubTittle>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                            </div>
+                            <div>
+                                <GiMicrophone className='iconContent2' />
+                                <SubTittle>Sound recording</SubTittle>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                            </div>
+                        </ContainerFlex>
+                        <ContainerFlex>
+                            <BarColor className='content2'>
+                            </BarColor>
+                            <Tittle><h2>My lastest works</h2></Tittle>
+                        </ContainerFlex>
+
                     </Content2>
                 </Grid>
                 <Grid item xs={12}>
-                    Content2
+                <ContainerFlex>
+                    <img src={img1} alt="img1" className='imgsContainer3'/>
+                    <img src={img2} alt="img2" className='imgsContainer3'/>
+                    <img src={img3} alt="img3" className='imgsContainer3'/>
+                </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
                     Content3

@@ -26,6 +26,13 @@ export const ContainerFlex = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+.iconContent2{
+  font-size: 2rem;
+}
+.imgsContainer3 {
+  width: 33%;
+  height: 50rem;
+}
 `;
 export const Header = styled.header`
   margin: 0 auto;
