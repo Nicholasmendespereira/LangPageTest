@@ -21,6 +21,27 @@ export const Button = styled.button`
 export const BarColor = styled.div`
 height: 0.5rem;
 background-color: #d66939;
+font-family: 'Hero Bold';
+`;
+export const NoStyled = styled.div`
+.ButtonSolitary {
+  margin: 2rem 0 0 55rem;
+  background-color: #d66939;
+  border: none;
+  color: white;
+  height: 3rem;
+  width: 13rem;
+  text-align: center;
+  font-family: 'Hero Bold';
+  font-size: 0.9rem;
+  transition: all 1000ms;
+  &:hover {
+    transition: all 900ms;
+    color: #d66939;
+    border: 2px solid #d66939;
+    background-color: white;
+  }
+}
 `;
 export const ContainerFlex = styled.div`
 display: flex;
@@ -32,6 +53,23 @@ align-items: center;
 .imgsContainer3 {
   width: 33%;
   height: 50rem;
+}
+.containerPerfilContent4 {
+  display: flex;
+}
+.imgContainer4 {
+  width: 20%;
+}
+.content3 {
+  width: 10rem;
+} 
+.containerContentProfile {
+  width: 50%;
+  text-align: start;
+  margin-left: 2rem;
+}
+.content5 {
+  width: 70%;
 }
 `;
 export const Header = styled.header`

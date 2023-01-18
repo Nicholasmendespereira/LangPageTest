@@ -1,7 +1,8 @@
-import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex } from './style'
+import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex, NoStyled } from './style'
 import img1 from '../../assets/img33.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
+import img4 from '../../assets/img4.jpg'
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -208,17 +209,42 @@ function Pothography() {
                     </Content2>
                 </Grid>
                 <Grid item xs={12}>
-                <ContainerFlex>
-                    <img src={img1} alt="img1" className='imgsContainer3'/>
-                    <img src={img2} alt="img2" className='imgsContainer3'/>
-                    <img src={img3} alt="img3" className='imgsContainer3'/>
-                </ContainerFlex>
+                    <ContainerFlex>
+                        <img src={img1} alt="img1" className='imgsContainer3' />
+                        <img src={img2} alt="img2" className='imgsContainer3' />
+                        <img src={img3} alt="img3" className='imgsContainer3' />
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    Content3
+                    <NoStyled>
+                        <Button className='ButtonSolitary'>Sell all works</Button>
+                    </NoStyled>
+                    <ContainerFlex>
+                        <div className='containerPerfilContent4'>
+                            <BarColor className='content3'>.</BarColor>
+                            <img src={img4} alt="img4" className='imgContainer4' />
+                            <div className='containerContentProfile'>
+                                <Tittle style={{fontFamily:'Hero bold'}}>About me</Tittle>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure obcaecati pariatur cum quaerat, dignissimos laborum in necessitatibus iste error illum possimus qui deleniti omnis. Cum amet quo commodi a expedita.
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, possimus officiis quae amet quam repellat iusto deleniti nihil voluptas alias reiciendis unde nostrum illo, natus asperiores! Repellendus excepturi est quibusdam!
+                                </p>
+                                <SubTittle style={{fontFamily:'Hero bold'}}>My farourite thinks:</SubTittle>
+                                <ul>
+                                    <li>basketball</li>
+                                    <li>travel</li>
+                                    <li>camping</li>
+                                    <li>draw</li>
+                                    <li>dogs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    Content4
+                    <ContainerFlex style={{marginLeft:"5rem", justifyContent:"space-around"}}>
+                        <Tittle>Video presentation</Tittle>
+                        <BarColor className='content5'>.</BarColor>
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
                     Content5
