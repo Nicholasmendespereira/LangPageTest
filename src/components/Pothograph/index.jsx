@@ -1,5 +1,8 @@
-import { Header, Button } from './style'
-
+import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex, NoStyled } from './style'
+import img1 from '../../assets/img33.jpg'
+import img2 from '../../assets/img2.jpg'
+import img3 from '../../assets/img3.jpg'
+import img4 from '../../assets/img4.jpg'
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -7,13 +10,13 @@ import Grid from '@mui/material/Grid';
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
+
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -27,31 +30,17 @@ import MailIcon from '@mui/icons-material/Mail';
 import { TiSocialLinkedin, TiSocialGithub, TiSocialYoutube, TiSocialInstagram } from 'react-icons/ti'
 import { SiReact } from 'react-icons/si'
 import { RiMenu3Fill } from 'react-icons/ri'
+import { HiOutlinePhotograph } from 'react-icons/hi'
+import { GiMicrophone } from 'react-icons/gi'
+import { BsCameraVideo } from 'react-icons/bs'
+import { AiOutlineCamera } from 'react-icons/ai'
+
 
 
 
 
 function Pothography() {
     const drawerWidth = 240;
-    const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
-        ({ theme, open }) => ({
-            flexGrow: 1,
-            padding: theme.spacing(3),
-            transition: theme.transitions.create('margin', {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.leavingScreen,
-            }),
-            marginRight: -drawerWidth,
-            ...(open && {
-                transition: theme.transitions.create('margin', {
-                    easing: theme.transitions.easing.easeOut,
-                    duration: theme.transitions.duration.enteringScreen,
-                }),
-                marginRight: 0,
-            }),
-        }),
-    );
-
     const AppBar = styled(MuiAppBar, {
         shouldForwardProp: (prop) => prop !== 'open',
     })(({ theme, open }) => ({
@@ -99,7 +88,7 @@ function Pothography() {
                                 <ul className='nav-header'>
                                     <li>Contact</li>
                                     <li>linguas</li>
-                                    <li><RiMenu3Fill className='menuToggle' /></li>
+                                    <li><RiMenu3Fill className='menuToggle' style={{ visibility: "hidden" }} /></li>
                                 </ul>
                             </div>
                         </div>
@@ -121,20 +110,20 @@ function Pothography() {
                         </div>
                     </Header>
                     {/* ////////////////////////////////////////////////// */}
-                    <Box sx={{ display: 'flex' }}>
+                    <Box sx={{ display: 'flex' }} >
                         <CssBaseline />
-                        <AppBar position="fixed" open={open}  id="toggletest" style={{backgroundColor: "rgb(00, 00, 00, 0.0)", width:"3rem", marginRight:"5.8rem", marginTop:"0.5rem", boxShadow:"none"}}
-                        className='menuToggle'
-                        >                      
-                                <IconButton
-                                    color="inherit"
-                                    aria-label="open drawer"
-                                    edge="end"
-                                    onClick={handleDrawerOpen}
-                                    sx={{ ...(open && { display: 'none' }) }}
-                                >
-                                    <RiMenu3Fill className='menuToggle' />
-                                </IconButton>              
+                        <AppBar position="fixed" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939" }}
+                            className='menuToggle'
+                        >
+                            <IconButton
+                                color="inherit"
+                                aria-label="open drawer"
+                                edge="end"
+                                onClick={handleDrawerOpen}
+                                sx={{ ...(open && { display: 'none' }) }}
+                            >
+                                <RiMenu3Fill className='menuToggle' />
+                            </IconButton>
                         </AppBar>
 
                         <Drawer
@@ -167,7 +156,7 @@ function Pothography() {
                                     </ListItem>
                                 ))}
                             </List>
-                            <Divider /> 
+                            <Divider />
                             <List>
                                 {['All mail', 'Trash', 'Spam'].map((text, index) => (
                                     <ListItem key={text} disablePadding>
@@ -185,16 +174,77 @@ function Pothography() {
                     {/* ////////////////////////////////////////////////// */}
                 </Grid>
                 <Grid item xs={12}>
-                    Content1
+                    <Content2>
+                        <Tittle>
+                            <h2>What can do for you</h2>
+                        </Tittle>
+                        <ContainerFlex>
+                            <div>
+                                <AiOutlineCamera className='iconContent2' />
+                                <SubTittle>Photo shooting</SubTittle>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum dignissimos laudantium magnam recusandae, amet sapiente. Quidem quam dignissimos consectetur ad sunt perferendis eveniet excepturi ipsa, tempora culpa minus dolores natus.</p>
+                            </div>
+                            <div>
+                                <BsCameraVideo className='iconContent2' />
+                                <SubTittle>Video shooting</SubTittle>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus fugiat sed at quidem, officia eligendi eos tempore repudiandae, excepturi laborum corrupti et debitis qui repellendus consequuntur id. Labore, possimus modi!</p>
+                            </div>
+                            <div>
+                                <HiOutlinePhotograph className='iconContent2' />
+                                <SubTittle>Retouch</SubTittle>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                            </div>
+                            <div>
+                                <GiMicrophone className='iconContent2' />
+                                <SubTittle>Sound recording</SubTittle>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, debitis maxime amet consequatur sunt aut doloribus vero beatae hic enim inventore consectetur. Eum iure beatae quisquam repellat eaque consectetur necessitatibus.</p>
+                            </div>
+                        </ContainerFlex>
+                        <ContainerFlex>
+                            <BarColor className='content2'>
+                            </BarColor>
+                            <Tittle><h2>My lastest works</h2></Tittle>
+                        </ContainerFlex>
+
+                    </Content2>
                 </Grid>
                 <Grid item xs={12}>
-                    Content2
+                    <ContainerFlex>
+                        <img src={img1} alt="img1" className='imgsContainer3' />
+                        <img src={img2} alt="img2" className='imgsContainer3' />
+                        <img src={img3} alt="img3" className='imgsContainer3' />
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    Content3
+                    <NoStyled>
+                        <Button className='ButtonSolitary'>Sell all works</Button>
+                    </NoStyled>
+                    <ContainerFlex>
+                        <div className='containerPerfilContent4'>
+                            <BarColor className='content3'>.</BarColor>
+                            <img src={img4} alt="img4" className='imgContainer4' />
+                            <div className='containerContentProfile'>
+                                <Tittle style={{fontFamily:'Hero bold'}}>About me</Tittle>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure obcaecati pariatur cum quaerat, dignissimos laborum in necessitatibus iste error illum possimus qui deleniti omnis. Cum amet quo commodi a expedita.
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, possimus officiis quae amet quam repellat iusto deleniti nihil voluptas alias reiciendis unde nostrum illo, natus asperiores! Repellendus excepturi est quibusdam!
+                                </p>
+                                <SubTittle style={{fontFamily:'Hero bold'}}>My farourite thinks:</SubTittle>
+                                <ul>
+                                    <li>basketball</li>
+                                    <li>travel</li>
+                                    <li>camping</li>
+                                    <li>draw</li>
+                                    <li>dogs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    Content4
+                    <ContainerFlex style={{marginLeft:"5rem", justifyContent:"space-around"}}>
+                        <Tittle>Video presentation</Tittle>
+                        <BarColor className='content5'>.</BarColor>
+                    </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
                     Content5
