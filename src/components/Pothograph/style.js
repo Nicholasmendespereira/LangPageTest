@@ -217,6 +217,12 @@ export const Content3 = styled.div`
     background-color: white;
   }
 } 
+.numberFooter {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
+
   `;
 
 

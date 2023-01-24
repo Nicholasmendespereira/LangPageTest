@@ -302,7 +302,7 @@ function Pothography() {
                             </div>
                             <ContainerFlex>
                             <BsFillTelephoneFill/>
-                            <a href="tel:+55349966996699" >++55(34)996596955</a>
+                            <a href="tel:+55349966996699" className='numberFooter'>++55(34)996596955</a>
                             </ContainerFlex>
                         </ContainerFlex>
                         <p>copyright © 2023</p>
