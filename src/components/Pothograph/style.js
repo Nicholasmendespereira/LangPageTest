@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import background from "../../assets/background-header.jpg";
+import background2 from '../../assets/mountains.jpg'
 import FontsProviders from "../../FontsProviders.css";
 
 export const Tittle = styled.h2`
@@ -11,7 +12,7 @@ font-size:1rem;
 font-weight: bolder;
 margin-right: 1rem;
 `;
-export const Button = styled.button`
+export const Buttton = styled.button`
   cursor: pointer;
 
   &:hover {
@@ -70,6 +71,10 @@ align-items: center;
 }
 .content5 {
   width: 70%;
+}
+.barColorForm {
+  width: 70%;
+  margin-right: -2rem;
 }
 `;
 export const Header = styled.header`
@@ -168,6 +173,56 @@ export const Content2 = styled.div`
   width: 50vw;
   margin-right: 10rem;
 }
+  `;
+export const Content3 = styled.div`
+  background-size: 100rem;
+  background-repeat: no-repeat;
+  background-image: url(${background2});
+  height: 50rem;
+  .AfterFooter {
+     justify-content: space-around;
+  }
+  `;
+  export const Footer = styled.footer`
+  height: 10rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  .social {
+    /* color: white; */
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    transition: all 1000ms;
+    &:hover {
+      transition: 500ms;
+      font-size: 2.2rem;
+    }
+  }
+  .ButtonSolitary {
+  background-color: #d66939;
+  border: none;
+  color: white;
+  height: 3rem;
+  width: 13rem;
+  text-align: center;
+  font-family: 'Hero Bold';
+  font-size: 0.9rem;
+  transition: all 1000ms;
+  &:hover {
+    transition: all 900ms;
+    color: #d66939;
+    border: 2px solid #d66939;
+    background-color: white;
+  }
+} 
+.numberFooter {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+}
+
   `;
 
 

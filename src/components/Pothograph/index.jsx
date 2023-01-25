@@ -1,4 +1,4 @@
-import { Header, Button, Tittle, SubTittle, BarColor, Content2, ContainerFlex, NoStyled } from './style'
+import { Header, Buttton, Tittle, SubTittle, BarColor, Content2, Content3, ContainerFlex, NoStyled, Footer } from './style'
 import img1 from '../../assets/img33.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
@@ -10,6 +10,10 @@ import Grid from '@mui/material/Grid';
 import { styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import TextareaAutosize from '@mui/base/TextareaAutosize';
 
 import CssBaseline from '@mui/material/CssBaseline';
 import List from '@mui/material/List';
@@ -34,6 +38,7 @@ import { HiOutlinePhotograph } from 'react-icons/hi'
 import { GiMicrophone } from 'react-icons/gi'
 import { BsCameraVideo } from 'react-icons/bs'
 import { AiOutlineCamera } from 'react-icons/ai'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 
 
 
@@ -105,7 +110,7 @@ function Pothography() {
                             <div className='textContent-header'>
                                 <h1>Testando o test</h1>
                                 <p style={{ fontFamily: 'Cyntho Next Light' }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eligendi molestiae quae perferendis eaque magnam quia voluptatibus, ipsa dolor? Voluptate reiciendis, tenetur consequuntur minus natus illo! Nihil perspiciatis eos magnam?</p>
-                                <button id='buttonContent'>Veja mais</button>
+                                <Buttton id='buttonContent'>Veja mais</Buttton>
                             </div>
                         </div>
                     </Header>
@@ -224,11 +229,11 @@ function Pothography() {
                             <BarColor className='content3'>.</BarColor>
                             <img src={img4} alt="img4" className='imgContainer4' />
                             <div className='containerContentProfile'>
-                                <Tittle style={{fontFamily:'Hero bold'}}>About me</Tittle>
+                                <Tittle style={{ fontFamily: 'Hero bold' }}>About me</Tittle>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure obcaecati pariatur cum quaerat, dignissimos laborum in necessitatibus iste error illum possimus qui deleniti omnis. Cum amet quo commodi a expedita.
                                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, possimus officiis quae amet quam repellat iusto deleniti nihil voluptas alias reiciendis unde nostrum illo, natus asperiores! Repellendus excepturi est quibusdam!
                                 </p>
-                                <SubTittle style={{fontFamily:'Hero bold'}}>My farourite thinks:</SubTittle>
+                                <SubTittle style={{ fontFamily: 'Hero bold' }}>My farourite thinks:</SubTittle>
                                 <ul>
                                     <li>basketball</li>
                                     <li>travel</li>
@@ -241,19 +246,68 @@ function Pothography() {
                     </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    <ContainerFlex style={{marginLeft:"5rem", justifyContent:"space-around"}}>
+                    <ContainerFlex style={{ marginLeft: "5rem", justifyContent: "space-around" }}>
                         <Tittle>Video presentation</Tittle>
                         <BarColor className='content5'>.</BarColor>
                     </ContainerFlex>
                 </Grid>
                 <Grid item xs={12}>
-                    Content5
+                    <video src='https://www.youtube.com/watch?v=6PpdlhZecVs' controls style={{ width: "80%", margin: "0 auto" }} />
                 </Grid>
                 <Grid item xs={12}>
-                    Content6
+                    <Content3>
+                        <ContainerFlex className="AfterFooter">
+                            <Tittle style={{ color: "white" }}>Send me messege</Tittle>
+                            <BarColor className='barColorForm'>.</BarColor>
+                        </ContainerFlex>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& > :not(style)': { m: 1, width: '50ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <ContainerFlex style={{ flexDirection: "column", margin: "0 auto", width: "80%" }}>
+                                <TextField id="outlined-basic" label="Outlined" variant="outlined" style={{ marginBottom: "1rem", width: "50%" }} />
+                                <TextareaAutosize placeholder="E-mail" style={{ marginBottom: "1rem", width: "50%", height: "10rem", border: "1px solid rgb(00,00, 00, 0.2)", backgroundColor: "rgb(00,00, 00, 0.2)" }} />
+                                <Stack spacing={2} direction="row">
+                                    <Button variant="contained" style={{ backgroundColor: "#d66939", fontFamily: "Hero Bold", width: "35rem" }}>Send message</Button>
+                                </Stack>
+                            </ContainerFlex>
+                        </Box>
+                    </Content3>
                 </Grid>
-                <Grid item xs={12}>
-                    Footer
+                <Grid item xs={12} style={{padding:"0"}}>
+                    <Footer>
+                            <ContainerFlex>
+                            <div>
+                                <div
+                                    style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        marginLeft: "5.2rem"
+                                    }}>
+                                    <SiReact style={{ marginRight: "0.8rem" }} />
+                                    Contructor WebSites</div>
+                            </div>
+                    
+                            </ContainerFlex>
+                            <ContainerFlex style={{flexDirection:"column"}}>
+                            <div>
+                            <TiSocialLinkedin className="social" />
+                            <TiSocialGithub className="social" />
+                            <TiSocialYoutube className="social" />
+                            <TiSocialInstagram className="social" />
+                            </div>
+                            <ContainerFlex>
+                            <BsFillTelephoneFill/>
+                            <a href="tel:+55349966996699" className='numberFooter'>++55(34)996596955</a>
+                            </ContainerFlex>
+                        </ContainerFlex>
+                        <p>copyright © 2023</p>
+                        <Button className='ButtonSolitary'>Hire me</Button>
+                    </Footer>
                 </Grid>
             </Grid>
         </Box>
