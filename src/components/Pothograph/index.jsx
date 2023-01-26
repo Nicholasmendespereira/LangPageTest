@@ -83,8 +83,8 @@ function Pothography() {
         setOpen(false);
     };
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+        <Box sx={{ flexGrow: 1}} style={{width:"100vw"}} >
+            <Grid container spacing={2} style={{width:"100vw"}}>
                 <Grid item xs={12}>
                     <Header>
                         <div className='container-header'>
@@ -117,7 +117,7 @@ function Pothography() {
                     {/* ////////////////////////////////////////////////// */}
                     <Box sx={{ display: 'flex' }} >
                         <CssBaseline />
-                        <AppBar position="fixed" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939" }}
+                        <AppBar position="relative" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939", right:"2rem"}}
                             className='menuToggle'
                         >
                             <IconButton

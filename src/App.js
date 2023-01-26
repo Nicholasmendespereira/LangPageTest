@@ -1,6 +1,6 @@
 import Pothography from '../src/components/Pothograph/index'
 import Home from './Home/index.jsx'
-import Nopage from './components/Pothograph/Nopage/index'
+import Nopage from './components/Nopage/index'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
