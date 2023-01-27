@@ -189,7 +189,7 @@ export const Content3 = styled.div`
      justify-content: space-around;
   }
   `;
-  export const Footer = styled.footer`
+export const Footer = styled.footer`
   height: 10rem;
   background-color: black;
   color: white;
@@ -229,6 +229,19 @@ export const Content3 = styled.div`
   color: white;
   list-style: none;
   text-decoration: none;
+}
+.uparrow {
+  position: relative;
+    left: 85%;
+    bottom: 50%;
+    font-size: 3rem;
+    transition: all 1000ms;
+    cursor: pointer;
+    &:hover {
+      transition:  all 1000ms;
+      opacity: 0.5;
+      font-size: 4rem;
+    }
 }
 
   `;
