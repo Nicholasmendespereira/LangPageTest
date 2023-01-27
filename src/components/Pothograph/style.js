@@ -84,6 +84,10 @@ export const Header = styled.header`
   background-repeat: no-repeat;
   height: 60rem;
   width: 98.7vw;
+  @media (max-width: 900px) {
+    background-size: 100%;
+    }
+
 
   .container-header {
     display: flex;
@@ -99,6 +103,9 @@ export const Header = styled.header`
     text-decoration: none;
     margin-right: 5.5rem;
     list-style: none;
+    @media (max-width: 900px) {
+      margin-right: 0rem;
+    }
   }
   .menuToggle {
     cursor: pointer;
@@ -137,7 +144,6 @@ export const Header = styled.header`
     transition: all 1000ms;
     &:hover {
       transition: 500ms;
-      /* -o-transition: 0.5s ease-in; */
       font-size: 4rem;
     }
   }
@@ -183,7 +189,7 @@ export const Content3 = styled.div`
      justify-content: space-around;
   }
   `;
-  export const Footer = styled.footer`
+export const Footer = styled.footer`
   height: 10rem;
   background-color: black;
   color: white;
@@ -191,7 +197,6 @@ export const Content3 = styled.div`
   align-items: center;
   justify-content: space-around;
   .social {
-    /* color: white; */
     font-size: 2rem;
     margin-left: 0.5rem;
     transition: all 1000ms;
@@ -216,11 +221,27 @@ export const Content3 = styled.div`
     border: 2px solid #d66939;
     background-color: white;
   }
+  @media (max-width: 900px) {
+    background-size: 100%;
+    }
 } 
 .numberFooter {
   color: white;
   list-style: none;
   text-decoration: none;
+}
+.uparrow {
+  position: relative;
+    left: 85%;
+    bottom: 50%;
+    font-size: 3rem;
+    transition: all 1000ms;
+    cursor: pointer;
+    &:hover {
+      transition:  all 1000ms;
+      opacity: 0.5;
+      font-size: 4rem;
+    }
 }
 
   `;
