@@ -281,7 +281,9 @@ function Pothography() {
                 </Grid>
                 <Grid item xs={12} style={{padding:"0"}}>
                     <Footer>
+                        
                     <IoIosArrowDropupCircle className='uparrow' onClick={() =>window.location = '#header'}/>
+                        
                             <ContainerFlex>
                             <div>
                                 <div

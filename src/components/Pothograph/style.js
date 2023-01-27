@@ -237,13 +237,25 @@ export const Footer = styled.footer`
     font-size: 3rem;
     transition: all 1000ms;
     cursor: pointer;
-    &:hover {
+    animation-duration: 2s ;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+    /* &:hover {
       transition:  all 1000ms;
       opacity: 0.5;
-      font-size: 4rem;
-    }
-}
+      font-size: 3.5rem;
+    } */
+    @keyframes slidein {
+ 0% {
+    bottom: 50%;
+  }
 
-  `;
+  100% {
+    
+    bottom: 70%;
+  }
+}
+}
+`;
 
 
