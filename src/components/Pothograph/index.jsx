@@ -3,6 +3,7 @@ import img1 from '../../assets/img33.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
 import img4 from '../../assets/img4.jpg'
+import iconwhats from '../../assets/whatsapp.png'
 
 import * as React from 'react';
 import Box from '@mui/material/Box';
@@ -280,9 +281,9 @@ function Pothography() {
                     </Content3>
                 </Grid>
                 <Grid item xs={12} style={{padding:"0"}}>
-                    <Footer>
-                        
+                    <Footer>                        
                     <IoIosArrowDropupCircle className='uparrow' onClick={() =>window.location = '#header'}/>
+                    <img src={iconwhats} alt="iconwhats" className='iconwhats'/>
                         
                             <ContainerFlex>
                             <div>
