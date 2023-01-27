@@ -252,6 +252,7 @@ export const Footer = styled.footer`
 } 
 }
 .iconwhats {
+  cursor: pointer;
   position: relative;
     left: 75%;
     bottom: 50%;

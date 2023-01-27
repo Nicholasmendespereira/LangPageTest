@@ -283,7 +283,7 @@ function Pothography() {
                 <Grid item xs={12} style={{padding:"0"}}>
                     <Footer>                        
                     <IoIosArrowDropupCircle className='uparrow' onClick={() =>window.location = '#header'}/>
-                    <img src={iconwhats} alt="iconwhats" className='iconwhats'/>
+                    <img src={iconwhats} alt="iconwhats" className='iconwhats' onClick={() =>window.location = 'https://web.whatsapp.com/send?phone=5534996588120'}/>
                         
                             <ContainerFlex>
                             <div>
