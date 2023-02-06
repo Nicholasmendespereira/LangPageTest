@@ -1,4 +1,5 @@
 import { Header, Buttton, Tittle, SubTittle, BarColor, Content2, Content3, ContainerFlex, NoStyled, Footer } from './style'
+import './GlobalStyle.css'
 import img1 from '../../assets/img33.jpg'
 import img2 from '../../assets/img2.jpg'
 import img3 from '../../assets/img3.jpg'
