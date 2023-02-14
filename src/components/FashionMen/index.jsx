@@ -24,7 +24,7 @@ function FashionMen() {
                     <li>
                         <FormControl variant="standard" sx={{ m: 1, minWidth: 90 }} >
                             <InputLabel id="demo-simple-select-standard-label">Product</InputLabel>
-                            <Select                                
+                            <Select
                                 labelId="demo-simple-select-standard-label"
                                 id="demo-simple-select-standard"
                                 value={age}
