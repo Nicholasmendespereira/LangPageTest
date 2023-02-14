@@ -233,17 +233,31 @@ export const Footer = styled.footer`
 .uparrow {
   position: relative;
     left: 85%;
-    bottom: 50%;
-    font-size: 3rem;
+    bottom: 90%;
+    font-size: 2.5rem;
     transition: all 1000ms;
     cursor: pointer;
-    &:hover {
-      transition:  all 1000ms;
-      opacity: 0.5;
-      font-size: 4rem;
-    }
-}
+    animation-duration: 2s ;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+     @keyframes slidein {
+ 0% {
+    bottom: 90%;
+  }
 
-  `;
+  100% {
+    
+    bottom: 103%;
+  }
+} 
+}
+.iconwhats {
+  cursor: pointer;
+  position: relative;
+    left: 75%;
+    bottom: 50%;
+    width: 4%;
+}
+`;
 
 

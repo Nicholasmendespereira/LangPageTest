@@ -15,6 +15,14 @@
     font-family: 'Hero Bold';
     src: url("../src/assets/hero-new-bold.otf")  format('opentype');
 }
+@font-face {
+    font-family: 'Hero Regular';
+    src: url("../src/assets/Hero-Regular.otf")  format('opentype');
+}
+@font-face {
+    font-family: 'Hero Light';
+    src: url("../src/assets/Hero-Light.otf")  format('opentype');
+}
 
 @font-face {
     font-family: 'Cyntho Next Bold';
