@@ -50,28 +50,37 @@ function Pothography() {
 
     const [post, setpost] = useState(null);
     const [DataUsers, setDataUsers] = useState();
-    const [name, setname] = useState("");
-    const [email, setemail] = useState("");
+    const [formData, setformData] = useState({});
+
 
     const HandleFirst = () => {
         api.get('/users').then((response) => {
             console.log(response)
-            setDataUsers(response);
+            // setDataUsers(response);
         });
     };
     useEffect(() => {
         HandleFirst()
     }, [])
-    const handleForm = () => {
-        api
-            .post('/usuarios', {
-                name,
-                email,
-            })
-            .then((response) => {
-                console.log(response)
-            })
-    }
+    // const handleForm = () => {
+    //     api
+    //         .post('/usuarios', {
+    //             name: name,
+    //             email: email,
+    //             telefone: telefone
+    //         })
+    //         .then((response) => {
+    //             console.log(response)
+    //             setDataUsers(response);
+
+    //         })
+    // }
+    const handleClickOpen = () => {
+        // e.preventDefault();
+        // setOpen(true);
+        const message = `https://api.whatsapp.com/send?phone=5534996596959&text=Olá! Gostaria de realizar uma orçamento. Meu nome é: *${formData?.name}*,meu e-mail: *${formData?.email}* e meu telefone: *${formData?.telefone}*!`;
+        window.open(message, '_blank');
+    };
 
     const drawerWidth = 240;
     const AppBar = styled(MuiAppBar, {
@@ -138,15 +147,65 @@ function Pothography() {
                             <div className='textContent-header'>
                                 <h1>Testando o test</h1>
                                 <p style={{ fontFamily: 'Cyntho Next Light' }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eligendi molestiae quae perferendis eaque magnam quia voluptatibus, ipsa dolor? Voluptate reiciendis, tenetur consequuntur minus natus illo! Nihil perspiciatis eos magnam?</p>
-                                <Buttton id='buttonContent'>Veja mais</Buttton>
+                                <Buttton onClick={() => { }} id='buttonContent'>Veja mais</Buttton>
                             </div>
                         </div>
-                        <input onChange={(e) => { setname(e.target.value) }} type="text" name="name" id="name" />
-                        {console.log(email)}
+                        {/* <input onChange={(e) => { setname(e.target.value) }} type="text" name="name" id="name" />
+                        {console.log(name)}
                         <input onChange={(e) => { setemail(e.target.value) }} type="text" name="email" id="email" />
-                        <button onClick={() => { handleForm() }}>ENVIAR</button>
+                        {console.log(email)}
+                        <input onChange={(e) => { settelefone(e.target.value) }} type="number" name="telefone" id="telefone" />
+                        {console.log(telefone)}
+                        <button onClick={() => {
+                            {
+                                handleClickOpen()
+                                handleForm()
+                            }
+                        }}>ENVIAR</button> */}
+                        Nome:
+                        <input
+                            value={formData?.name}
+                            onChange={(e) =>
+                                setformData({ ...formData, name: e.target.value })
+                            }
+                            placeholder="Digite o seu nome"
+                            type="text"
+                            name="name-form"
+                            id="name-form"
+                            className="inputs-form"
+                        />
+                        E-mail:
+                        <input
+                            value={formData?.email}
+                            onChange={(e) =>
+                                setformData({ ...formData, email: e.target.value })
+                            }
+                            placeholder="Digite o seu email"
+                            type="text"
+                            name="email-form"
+                            id="email-form"
+                            className="inputs-form"
+                        />
+                        Telefone:
+                        <input
+                            value={formData?.telefone}
+                            onChange={(e) =>
+                                setformData({ ...formData, telefone: e.target.value })
+                            }
+                            placeholder="Digite o seu telefone"
+                            type="number"
+                            name="number-form"
+                            id="number-form"
+                            className="inputs-form"
+                        />
+                        <button
+                            onClick={handleClickOpen}
+                            disabled={!formData.telefone || !formData.email}
+                            className="enviar-btn">
+                            ENVIAR
+                        </button>
                         <ul>
-                            <li>{DataUsers?.avatar}</li>
+                            {/* <li>{DataUsers?.avatar}</li> */}
                         </ul>
                     </Header>
                     {/* ////////////////////////////////////////////////// */}
