@@ -1,3 +1,5 @@
+import api from '../../api/api'
+
 import { Header, Buttton, Tittle, SubTittle, BarColor, Content2, Content3, ContainerFlex, NoStyled, Footer } from './style'
 import './GlobalStyle.css'
 import img1 from '../../assets/img33.jpg'
@@ -9,7 +11,7 @@ import iconwhats from '../../assets/whatsapp.png'
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { styled, useTheme } from '@mui/material/styles';
+import { responsiveFontSizes, styled, useTheme } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import TextField from '@mui/material/TextField';
@@ -41,13 +43,36 @@ import { GiMicrophone } from 'react-icons/gi'
 import { BsCameraVideo, BsFillTelephoneFill } from 'react-icons/bs'
 import { AiOutlineCamera } from 'react-icons/ai'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
-
-
-
-
+import { useState, useEffect } from "react";
 
 
 function Pothography() {
+
+    const [post, setpost] = useState(null);
+    const [DataUsers, setDataUsers] = useState();
+    const [name, setname] = useState("");
+    const [email, setemail] = useState("");
+
+    const HandleFirst = () => {
+        api.get('/users').then((response) => {
+            console.log(response)
+            setDataUsers(response);
+        });
+    };
+    useEffect(() => {
+        HandleFirst()
+    }, [])
+    const handleForm = () => {
+        api
+            .post('/usuarios', {
+                name,
+                email,
+            })
+            .then((response) => {
+                console.log(response)
+            })
+    }
+
     const drawerWidth = 240;
     const AppBar = styled(MuiAppBar, {
         shouldForwardProp: (prop) => prop !== 'open',
@@ -86,8 +111,8 @@ function Pothography() {
         setOpen(false);
     };
     return (
-        <Box sx={{ flexGrow: 1}} style={{width:"100vw"}} >
-            <Grid container spacing={2} style={{width:"100vw"}}>
+        <Box sx={{ flexGrow: 1 }} style={{ width: "100vw" }} >
+            <Grid container spacing={2} style={{ width: "100vw" }}>
                 <Grid item xs={12}>
                     <Header id='header'>
                         <div className='container-header'>
@@ -116,11 +141,18 @@ function Pothography() {
                                 <Buttton id='buttonContent'>Veja mais</Buttton>
                             </div>
                         </div>
+                        <input onChange={(e) => { setname(e.target.value) }} type="text" name="name" id="name" />
+                        {console.log(email)}
+                        <input onChange={(e) => { setemail(e.target.value) }} type="text" name="email" id="email" />
+                        <button onClick={() => { handleForm() }}>ENVIAR</button>
+                        <ul>
+                            <li>{DataUsers?.avatar}</li>
+                        </ul>
                     </Header>
                     {/* ////////////////////////////////////////////////// */}
                     <Box sx={{ display: 'flex' }} >
                         <CssBaseline />
-                        <AppBar position="relative" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939", right:"2rem"}}
+                        <AppBar position="relative" open={open} id="toggletest" style={{ backgroundColor: "rgb(00, 00, 00, 0.0)", width: "3rem", marginRight: "9.5rem", marginTop: "0.5rem", boxShadow: "none", color: "#d66939", right: "2rem" }}
                             className='menuToggle'
                         >
                             <IconButton
@@ -281,12 +313,12 @@ function Pothography() {
                         </Box>
                     </Content3>
                 </Grid>
-                <Grid item xs={12} style={{padding:"0"}}>
-                    <Footer>                        
-                    <IoIosArrowDropupCircle className='uparrow' onClick={() =>window.location = '#header'}/>
-                    <img src={iconwhats} alt="iconwhats" className='iconwhats' onClick={() =>window.location = 'https://web.whatsapp.com/send?phone=5534996588120'}/>
-                        
-                            <ContainerFlex>
+                <Grid item xs={12} style={{ padding: "0" }}>
+                    <Footer>
+                        <IoIosArrowDropupCircle className='uparrow' onClick={() => window.location = '#header'} />
+                        <img src={iconwhats} alt="iconwhats" className='iconwhats' onClick={() => window.location = 'https://web.whatsapp.com/send?phone=5534996588120'} />
+
+                        <ContainerFlex>
                             <div>
                                 <div
                                     style={{
@@ -297,18 +329,18 @@ function Pothography() {
                                     <SiReact style={{ marginRight: "0.8rem" }} />
                                     Contructor WebSites</div>
                             </div>
-                    
-                            </ContainerFlex>
-                            <ContainerFlex style={{flexDirection:"column"}}>
+
+                        </ContainerFlex>
+                        <ContainerFlex style={{ flexDirection: "column" }}>
                             <div>
-                            <TiSocialLinkedin className="social" />
-                            <TiSocialGithub className="social" />
-                            <TiSocialYoutube className="social" />
-                            <TiSocialInstagram className="social" />
+                                <TiSocialLinkedin className="social" />
+                                <TiSocialGithub className="social" />
+                                <TiSocialYoutube className="social" />
+                                <TiSocialInstagram className="social" />
                             </div>
                             <ContainerFlex>
-                            <BsFillTelephoneFill/>
-                            <a href="tel:+55349966996699" className='numberFooter'>++55(34)996596955</a>
+                                <BsFillTelephoneFill />
+                                <a href="tel:+55349966996699" className='numberFooter'>++55(34)996596955</a>
                             </ContainerFlex>
                         </ContainerFlex>
                         <p>copyright © 2023</p>
