@@ -1,5 +1,7 @@
 import api from '../../api/api'
 
+import Card from '../../components/Card/index'
+
 import { Header, Buttton, Tittle, SubTittle, BarColor, Content2, Content3, ContainerFlex, NoStyled, Footer } from './style'
 import './GlobalStyle.css'
 import img1 from '../../assets/img33.jpg'
@@ -55,26 +57,26 @@ function Pothography() {
 
     const HandleFirst = () => {
         api.get('/users').then((response) => {
-            console.log(response)
+            console.log("Get do iniciar",response)
             // setDataUsers(response);
         });
     };
     useEffect(() => {
         HandleFirst()
     }, [])
-    // const handleForm = () => {
-    //     api
-    //         .post('/usuarios', {
-    //             name: name,
-    //             email: email,
-    //             telefone: telefone
-    //         })
-    //         .then((response) => {
-    //             console.log(response)
-    //             setDataUsers(response);
-
-    //         })
-    // }
+    const handleForm = () => {
+        api
+            .post('/usuarios', {
+                name: formData?.name,
+                email: formData?.email,
+                telefone: formData?.telefone
+            })
+            .then((response) => {
+                console.log("resposta da função",response)
+                setDataUsers(response);
+            })
+        }
+        console.log("Usuários:", DataUsers)
     const handleClickOpen = () => {
         // e.preventDefault();
         // setOpen(true);
@@ -147,21 +149,9 @@ function Pothography() {
                             <div className='textContent-header'>
                                 <h1>Testando o test</h1>
                                 <p style={{ fontFamily: 'Cyntho Next Light' }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam eligendi molestiae quae perferendis eaque magnam quia voluptatibus, ipsa dolor? Voluptate reiciendis, tenetur consequuntur minus natus illo! Nihil perspiciatis eos magnam?</p>
-                                <Buttton onClick={() => { }} id='buttonContent'>Veja mais</Buttton>
+                                <Buttton onClick={() => { handleForm() }} id='buttonContent'>Veja mais</Buttton>
                             </div>
                         </div>
-                        {/* <input onChange={(e) => { setname(e.target.value) }} type="text" name="name" id="name" />
-                        {console.log(name)}
-                        <input onChange={(e) => { setemail(e.target.value) }} type="text" name="email" id="email" />
-                        {console.log(email)}
-                        <input onChange={(e) => { settelefone(e.target.value) }} type="number" name="telefone" id="telefone" />
-                        {console.log(telefone)}
-                        <button onClick={() => {
-                            {
-                                handleClickOpen()
-                                handleForm()
-                            }
-                        }}>ENVIAR</button> */}
                         Nome:
                         <input
                             value={formData?.name}
@@ -207,6 +197,7 @@ function Pothography() {
                         <ul>
                             {/* <li>{DataUsers?.avatar}</li> */}
                         </ul>
+                        <Card name={formData?.name} email={formData?.email} telefone={formData?.telefone}dataUsers={DataUsers}></Card>
                     </Header>
                     {/* ////////////////////////////////////////////////// */}
                     <Box sx={{ display: 'flex' }} >
