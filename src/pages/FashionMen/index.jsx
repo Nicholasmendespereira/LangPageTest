@@ -87,6 +87,7 @@ function FashionMen() {
           </ul>
         </Header>
       </Main>
+
       <Form>
         <Box
           component="form"
@@ -101,7 +102,7 @@ function FashionMen() {
           autoComplete="off"
         >
           <TextField
-            style={{ width: "19.5%" }}
+            style={{ width: "48%" }}
             id="standard-basic"
             label="Nome"
             variant="standard"
@@ -130,6 +131,36 @@ function FashionMen() {
               <MenuItem value="progressive">Progressiva</MenuItem>
             </Select>
           </FormControl>
+          <TextField
+            style={{ width: "48%"}}
+            id="standard-basic"
+            label="Horário"
+            placeholder="horas"
+            variant="standard"
+            className="input"
+            onChange={(e) => setFormData({ ...formData, hour: e.target.value })}
+          />
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 270, marginTop:"2rem" }}>
+            <InputLabel id="demo-simple-select-standard-label">
+              Manhã, Tarde ou Noite
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-standard-label"
+              id="demo-simple-select-standard"
+              value={formData?.shift}
+              onChange={(e) =>
+                setFormData({ ...formData, shift: e.target.value })
+              }
+              label="Manhã, Tarde ou Noite"
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value="morning">Manhã</MenuItem>
+              <MenuItem value="afternoon">Tarde</MenuItem>
+              <MenuItem value="night">Noite</MenuItem>
+            </Select>
+          </FormControl>
           <div
             style={{
               display: "flex",
@@ -154,36 +185,6 @@ function FashionMen() {
               />
             </LocalizationProvider>
           </div>
-          <TextField
-            style={{ width: "19.5%" }}
-            id="standard-basic"
-            label="Horário"
-            placeholder="horas"
-            variant="standard"
-            className="input"
-            onChange={(e) => setFormData({ ...formData, hour: e.target.value })}
-          />
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 270 }}>
-            <InputLabel id="demo-simple-select-standard-label">
-              Manhã, Tarde ou Noite
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-standard-label"
-              id="demo-simple-select-standard"
-              value={formData?.shift}
-              onChange={(e) =>
-                setFormData({ ...formData, shift: e.target.value })
-              }
-              label="Manhã, Tarde ou Noite"
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value="morning">Manhã</MenuItem>
-              <MenuItem value="afternoon">Tarde</MenuItem>
-              <MenuItem value="night">Noite</MenuItem>
-            </Select>
-          </FormControl>
           <Button
             variant="outlined"
             onClick={() => {
