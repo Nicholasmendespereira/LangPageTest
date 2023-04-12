@@ -1,11 +1,11 @@
 import styled from 'styled-components'
+import background from '../../assets/cortando-cabelo.jpg'
 
 export const Header = styled.header`
 display: flex;
 align-items: center;
 height: 5rem;
 width: 100vw;
-margin-left: calc(10% - 0.2rem);
 .logo{
     width: 8%;
 }
@@ -33,10 +33,58 @@ margin-left: calc(10% - 0.2rem);
    padding: 0.3rem;
 }
 .iconsHeader2 {
+    color: white;
     font-size: 1.2rem;
     &:hover{
         background-color:  #AA764A;
         color: white;
     }
 }
+.ContainerSelect *{
+color: white;
+}
+`;
+export const Main = styled.main`
+height: 100vh;
+width: 100vw;
+background-image:url(${background});
+background-repeat: no-repeat;
+background-size: 100%;
+opacity: 1;
+`;
+export const Div = styled.div`
+width: 100vw;
+height: 10vh;
+background-color: rgba(255,255,255,1);
+`;
+export const Form = styled.form`
+border: 1px solid black;
+.input {
+    width: 50%;
+    margin-top: 2rem;
+}
+`;
+export const Agendado = styled.div`
+width: 30%;
+height: 20%;
+border: 1px solid lightgrey;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+color: gray;
+h3 {
+    color: lightgray
+}
+span {
+    color: gray;
+}
+`;
+export const SubAgendado = styled.div`
+margin-top: 5%;
+width: 100%;
+height: 100%;
+border: 1px solid lightgrey;
+border-radius: 10px;
 `;
