@@ -3,7 +3,7 @@ import "./style.js";
 import { Header, Main, Form, Agendado, SubAgendado } from "./style.js";
 import { useState } from "react";
 import moment from "moment";
-
+import { formatShift, formatProcess } from "../../utilits";
 import { toast } from "react-toastify";
 import logo from "../../assets/logosemfundo.png";
 
@@ -25,7 +25,6 @@ import Button from "@mui/material/Button";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { TimeClock } from "@mui/x-date-pickers/TimeClock";
 import { useEffect } from "react";
 
 function FashionMen() {
@@ -62,9 +61,6 @@ function FashionMen() {
       });
     }
   };
-  useEffect(() => {
-    console.log(typeof formData?.day);
-  }, [formData]);
   return (
     <>
       <Main>
@@ -102,7 +98,7 @@ function FashionMen() {
           autoComplete="off"
         >
           <TextField
-            style={{ width: "48%" }}
+            style={{ width: "45.5%" }}
             id="standard-basic"
             label="Nome"
             variant="standard"
@@ -110,7 +106,7 @@ function FashionMen() {
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <br />
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 270 }}>
+          <FormControl variant="standard" sx={{ m: 1, minWidth: 260 }}>
             <InputLabel id="demo-simple-select-standard-label">
               Procedimento
             </InputLabel>
@@ -132,7 +128,7 @@ function FashionMen() {
             </Select>
           </FormControl>
           <TextField
-            style={{ width: "48%"}}
+            style={{ width: "45.5%" }}
             id="standard-basic"
             label="Horário"
             placeholder="horas"
@@ -140,7 +136,11 @@ function FashionMen() {
             className="input"
             onChange={(e) => setFormData({ ...formData, hour: e.target.value })}
           />
-          <FormControl variant="standard" sx={{ m: 1, minWidth: 270, marginTop:"2rem" }}>
+          <FormControl
+            variant="standard"
+            sx={{ m: 1, minWidth: 260 }}
+            style={{ marginTop: "2rem", marginBottom: "2.5rem" }}
+          >
             <InputLabel id="demo-simple-select-standard-label">
               Manhã, Tarde ou Noite
             </InputLabel>
@@ -171,48 +171,51 @@ function FashionMen() {
               margin: "0 auto",
             }}
           >
-            <LocalizationProvider
-              dateAdapter={AdapterDayjs}
-              style={{ width: "100%" }}
-            >
-              <DatePicker
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    day: moment(e.target.value).format("DD/MM/YYYY"),
-                  })
-                }
+            {/* // day: moment(e.target.value).format("DD/MM/YYYY"), */}
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker 
+                onChange={(e) => setFormData({...formData, day: e.target.value})}
               />
             </LocalizationProvider>
           </div>
+          {console.log(formData?.day)}
+          <h2>{formData?.day}</h2>
           <Button
+            style={{
+              marginTop: "2.5rem",
+              border: "1px solid rgba(170,118,74, 0.5)",
+              color: "rgb(170,118,74)",
+            }}
+            // disabled={}
             variant="outlined"
             onClick={() => {
               HandleSumit();
             }}
           >
-            Outlined
+            Agendar
           </Button>
         </Box>
-        <Agendado>
-          <h3>
-            Cliente: <span>{formData?.name}</span>
-          </h3>
-          <h3>
-            Procedimento: <span>{formData?.process}</span>
-          </h3>
-          <h3>
-            Agendamento: <br />
-            <span>
-              <SubAgendado>
-                <small>Dia</small>: {formData?.day} <br />
-                {formData?.hour} <small>horas</small>, <br />
-                <span>{formData?.shift}</span> <br />
-              </SubAgendado>
-            </span>
-          </h3>
-        </Agendado>
       </Form>
+      <Agendado>
+        <h3>
+          Cliente: <br />
+          <span>{formData?.name}</span>
+        </h3>
+        <h3>
+          Procedimento: <br />
+          <span>{formatProcess(formData?.process)?.label}</span>
+        </h3>
+        <h3>
+          Agendamento: <br />
+          <span>
+            <SubAgendado>
+              {formData?.hour} <small>horas</small>, <br />
+              <small>Dia</small>: {formData?.day} <br />
+              <small>{formatShift(formData?.shift)?.label}</small> <br />
+            </SubAgendado>
+          </span>
+        </h3>
+      </Agendado>
     </>
   );
 }

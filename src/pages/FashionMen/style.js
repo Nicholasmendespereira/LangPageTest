@@ -60,6 +60,7 @@ background-color: rgba(255,255,255,1);
 export const Form = styled.form`
 width: 40%;
 margin: 2rem auto;
+padding-bottom: 10px;
 border: 1px solid rgba(170,118,74, 0.5);
 .input {
     width: 50%;
@@ -70,6 +71,7 @@ export const Agendado = styled.div`
 width: 30%;
 height: 20%;
 border: 1px solid lightgrey;
+border-radius:20px;
 display: flex;
 flex-direction: column;
 justify-content: center;
