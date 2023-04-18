@@ -40,13 +40,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 overflow-x: hidden;
-min-height:80vh;
+min-height:100vh;
 background-image: url(${backgroundheadphone});
 background-size: 100%;
 opacity: 0.9;
 `;
 export const Main2 = styled.div`
-min-height: 88vh;
+min-height: 100vh;
 background-image: url(${background2});
 background-repeat: no-repeat;
 background-size: 100%;

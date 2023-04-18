@@ -128,3 +128,6 @@ width:100%;
 background-image: linear-gradient(to bottom, lightgray, rgba(255,255,255,0.2));
 height: 100vh;
 `;
+export const Card = styled.div`
+
+`;

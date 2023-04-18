@@ -11,6 +11,7 @@ import {
   SubAgendado,
   Carousel,
   DetailsProcess,
+  Card
 } from "./style.js";
 import { useState } from "react";
 import moment from "moment";
@@ -446,6 +447,9 @@ function FashionMen() {
           )}
         </Box>
       </DetailsProcess>
+      <Card>
+            
+      </Card>
     </>
   );
 }
