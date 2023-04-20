@@ -103,8 +103,8 @@ function FashionMen() {
     },
   ];
   const [width, setWidth] = useState(0);
-  const [image, setImage] = useState();
-  const [img, setImg] = useState(-1);
+  const [img, setImg] = useState(0);
+  const [image, setImage] = useState(images[img]);
   const [formData, setFormData] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
@@ -114,7 +114,6 @@ function FashionMen() {
     setImg((img) => img + 1)
     setImage(images[img]);
   };
-console.log({img})
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
     setImg((img) => img - 1);
@@ -466,7 +465,7 @@ console.log({img})
             </Paper>
           )}
         </Box>
-          <img src={image} alt="alt text" style={{ width: "30%", borderRadius:"20px" }} />
+        <img src={image} alt="alt text" style={{ width: "30%", borderRadius: "20px" }} />
       </DetailsProcess>
     </>
   );
