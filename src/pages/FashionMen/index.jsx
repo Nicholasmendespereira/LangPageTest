@@ -14,7 +14,8 @@ import {
   Carousel,
   DetailsProcess,
   Card,
-  ContainerCard
+  ContainerCard,
+  InCardImage
 } from "./style.js";
 import {
   LightBrown,
@@ -57,28 +58,27 @@ import Typography from "@mui/material/Typography";
 
 import logo from "../../assets/logosemfundo.png";
 import img01 from "../../assets/img4.jpg";
-// import img03 from "../../assets/paper03.jpg";
-// import img04 from "../../assets/paper04.jpg";
-// import img05 from "../../assets/paper05.jpg";
-// import img06 from "../../assets/paper06.jpg";
-// import img07 from "../../assets/paper07.jpg";
-// import img08 from "../../assets/paper08.jpg";
-// import img09 from "../../assets/paper09.jpg";
-// import img10 from "../../assets/paper10.jpg";
+import img03 from "../../assets/paper03.jpg";
+import img04 from "../../assets/paper04.jpg";
+import img05 from "../../assets/paper05.jpg";
+import img06 from "../../assets/paper06.jpg";
+import img07 from "../../assets/paper07.jpg";
+import img08 from "../../assets/paper08.jpg";
+import img09 from "../../assets/paper09.jpg";
+import img10 from "../../assets/paper10.jpg";
 
 function FashionMen() {
   const carouselRef = useRef();
-  // const images = [
-  //   img01,
-  //   img03,
-  //   img04,
-  //   img05,
-  //   img06,
-  //   img07,
-  //   img08,
-  //   img09,
-  //   img10,
-  // ];
+  const images = [
+    img03,
+    img04,
+    img05,
+    img06,
+    img07,
+    // img08,
+    // img09,
+    // img10,
+  ];
   const steps = [
     {
       label: "Oque é Hidratação capilar?",
@@ -102,23 +102,28 @@ function FashionMen() {
       description: `O Corte de cabelo é o que define o estilo visual dos cabelos e consequentemente, o estilo visual da pessoa. Acompanhar o design do corte, com a personalidade da pessoa, torna a mesma mais autentica e única, pois ela será representada por si mesma.`,
     },
   ];
+  const [width, setWidth] = useState(0);
+  const [image, setImage] = useState();
+  const [img, setImg] = useState(-1);
+  const [formData, setFormData] = useState({});
+  const [openDialog, setOpenDialog] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setImg((img) => img + 1)
+    setImage(images[img]);
   };
-
+console.log({img})
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setImg((img) => img - 1);
+    setImage(images[img]);
   };
 
   const handleReset = () => {
     setActiveStep(0);
   };
-  const [width, setWidth] = useState(0);
-  // const [image, setImage] = useState(img01);
-  const [formData, setFormData] = useState({});
-  const [openDialog, setOpenDialog] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     setWidth(
@@ -136,13 +141,10 @@ function FashionMen() {
   const HandleSumit = (e) => {
     // e.preventDefault();
     // setOpen(true);
-    const message = `https://api.whatsapp.com/send?phone=5534996442120&text=Olá! Gostaria de marcar um horário. Meu nome é: *${
-      formData?.name
-    }*,quero fazer: *${formatProcess(formData?.process)?.label}*, as: *${
-      formData?.hour
-    }* da *${formatShift(formData?.shift)?.label}*, no dia: *${
-      formData?.day
-    }*!`;
+    const message = `https://api.whatsapp.com/send?phone=5534996442120&text=Olá! Gostaria de marcar um horário. Meu nome é: *${formData?.name
+      }*,quero fazer: *${formatProcess(formData?.process)?.label}*, as: *${formData?.hour
+      }* da *${formatShift(formData?.shift)?.label}*, no dia: *${formData?.day
+      }*!`;
     window.open(message, "_blank");
     toast.success({
       position: toast.POSITION.TOP_RIGHT,
@@ -464,8 +466,8 @@ function FashionMen() {
             </Paper>
           )}
         </Box>
+          <img src={image} alt="alt text" style={{ width: "30%", borderRadius:"20px" }} />
       </DetailsProcess>
-      <Card></Card>
     </>
   );
 }

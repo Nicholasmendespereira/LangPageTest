@@ -126,15 +126,12 @@ export const SubAgendado = styled.div`
 `;
 export const DetailsProcess = styled.div`
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   margin: 2rem auto;
-  width: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    lightgray,
-    rgba(255, 255, 255, 0.2)
-  );
+  padding-left: 5rem;
+  width: 93.5%;
+  background-image: linear-gradient(to right, #8c5c4a, rgba(64, 32, 25, 1));
   height: 100vh;
 `;
 export const ContainerCard = styled.div`
@@ -143,10 +140,12 @@ export const ContainerCard = styled.div`
   justify-content: center;
 `;
 export const Card = styled.div`
-  width: 26rem;
+  width: 20rem;
   height: 15rem;
-  background: rgba(192,166, 156, 1);
+  background: #a68072;
   border: 2px solid #8c5c4a;
   border-radius: 3px;
   margin: 3rem;
+  color: #402019;
+  font-weight: bold;
 `;
