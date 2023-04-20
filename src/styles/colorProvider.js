@@ -1,0 +1,6 @@
+export const lightBrown = '#A68072'
+export const MediumBrown = '#8C5C4A'
+export const HardBrown = '#402019'
+export const Black = '#0D0000'
+export const GreenLigth = '#CAD9BF'
+export const HardLigth = '#486255'

@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import {
+  Tittle,
+  SubTittle,
   Header,
   Main,
   Form,
@@ -11,8 +13,16 @@ import {
   SubAgendado,
   Carousel,
   DetailsProcess,
-  Card
+  Card,
+  ContainerCard
 } from "./style.js";
+import {
+  LightBrown,
+  MediumBrown,
+  HardBrown,
+  Black,
+  GreenLigth,
+} from "../../styles/colorProvider.js";
 import { useState } from "react";
 import moment from "moment";
 import { formatShift, formatProcess } from "../../utilits";
@@ -47,28 +57,28 @@ import Typography from "@mui/material/Typography";
 
 import logo from "../../assets/logosemfundo.png";
 import img01 from "../../assets/img4.jpg";
-import img03 from "../../assets/paper03.jpg";
-import img04 from "../../assets/paper04.jpg";
-import img05 from "../../assets/paper05.jpg";
-import img06 from "../../assets/paper06.jpg";
-import img07 from "../../assets/paper07.jpg";
-import img08 from "../../assets/paper08.jpg";
-import img09 from "../../assets/paper09.jpg";
-import img10 from "../../assets/paper10.jpg";
+// import img03 from "../../assets/paper03.jpg";
+// import img04 from "../../assets/paper04.jpg";
+// import img05 from "../../assets/paper05.jpg";
+// import img06 from "../../assets/paper06.jpg";
+// import img07 from "../../assets/paper07.jpg";
+// import img08 from "../../assets/paper08.jpg";
+// import img09 from "../../assets/paper09.jpg";
+// import img10 from "../../assets/paper10.jpg";
 
 function FashionMen() {
   const carouselRef = useRef();
-  const images = [
-    img01,
-    img03,
-    img04,
-    img05,
-    img06,
-    img07,
-    img08,
-    img09,
-    img10,
-  ];
+  // const images = [
+  //   img01,
+  //   img03,
+  //   img04,
+  //   img05,
+  //   img06,
+  //   img07,
+  //   img08,
+  //   img09,
+  //   img10,
+  // ];
   const steps = [
     {
       label: "Oque é Hidratação capilar?",
@@ -105,7 +115,7 @@ function FashionMen() {
     setActiveStep(0);
   };
   const [width, setWidth] = useState(0);
-  const [image, setImage] = useState(img01);
+  // const [image, setImage] = useState(img01);
   const [formData, setFormData] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
@@ -172,7 +182,7 @@ function FashionMen() {
 
   return (
     <>
-      <Main backgroundImage={image}>
+      <Main>
         <Header>
           <img src={logo} alt="logo" className="logo" />
           <div className="barVertical">.</div>
@@ -191,8 +201,16 @@ function FashionMen() {
             </li>
           </ul>
         </Header>
+        <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
+        <SubTittle color={MediumBrown}>Experimente!</SubTittle>
       </Main>
-      <Carousel>
+      <ContainerCard>
+        <Card>oi</Card>
+        <Card>oi</Card>
+        <Card>oi</Card>
+        <Card>oi</Card>
+      </ContainerCard>
+      {/* <Carousel>
         <motion.div
           ref={carouselRef}
           className="carousel"
@@ -221,7 +239,7 @@ function FashionMen() {
             ))}
           </motion.div>
         </motion.div>
-      </Carousel>
+      </Carousel> */}
 
       <Button
         variant="outlined"
@@ -447,9 +465,7 @@ function FashionMen() {
           )}
         </Box>
       </DetailsProcess>
-      <Card>
-            
-      </Card>
+      <Card></Card>
     </>
   );
 }
