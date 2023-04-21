@@ -5,6 +5,7 @@ import styled from "styled-components";
 export const Header = styled.header`
   background-color: #CAD9BF;
   position: fixed;
+  margin-top: -0.2rem;
   display: flex;
   align-items: center;
   height: 5rem;
