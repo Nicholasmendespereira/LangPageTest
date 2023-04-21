@@ -1,5 +1,6 @@
 import api from "../../api/api";
 import "./style.js";
+import "./GlobalStyle.css";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,8 @@ import {
   DetailsProcess,
   Card,
   ContainerCard,
-  InCardImage
+  InCardImage,
+  Div,
 } from "./style.js";
 import {
   LightBrown,
@@ -66,6 +68,7 @@ import img07 from "../../assets/paper07.jpg";
 import img08 from "../../assets/paper08.jpg";
 import img09 from "../../assets/paper09.jpg";
 import img10 from "../../assets/paper10.jpg";
+import Gif from "../../assets/119593-agenda.gif";
 
 function FashionMen() {
   const carouselRef = useRef();
@@ -111,7 +114,7 @@ function FashionMen() {
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setImg((img) => img + 1)
+    setImg((img) => img + 1);
     setImage(images[img]);
   };
   const handleBack = () => {
@@ -140,10 +143,13 @@ function FashionMen() {
   const HandleSumit = (e) => {
     // e.preventDefault();
     // setOpen(true);
-    const message = `https://api.whatsapp.com/send?phone=5534996442120&text=Olá! Gostaria de marcar um horário. Meu nome é: *${formData?.name
-      }*,quero fazer: *${formatProcess(formData?.process)?.label}*, as: *${formData?.hour
-      }* da *${formatShift(formData?.shift)?.label}*, no dia: *${formData?.day
-      }*!`;
+    const message = `https://api.whatsapp.com/send?phone=5534996442120&text=Olá! Gostaria de marcar um horário. Meu nome é: *${
+      formData?.name
+    }*,quero fazer: *${formatProcess(formData?.process)?.label}*, as: *${
+      formData?.hour
+    }* da *${formatShift(formData?.shift)?.label}*, no dia: *${
+      formData?.day
+    }*!`;
     window.open(message, "_blank");
     toast.success({
       position: toast.POSITION.TOP_RIGHT,
@@ -205,12 +211,88 @@ function FashionMen() {
         <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
         <SubTittle color={MediumBrown}>Experimente!</SubTittle>
       </Main>
-      <ContainerCard>
+      <DetailsProcess>
+        <Box sx={{ maxWidth: 400 }}>
+          <Stepper activeStep={activeStep} orientation="vertical">
+            {steps.map((step, index) => (
+              <Step key={step.label} style={{ textAlign: "start" }}>
+                <StepLabel
+                  optional={
+                    index === 4 ? (
+                      <Typography variant="caption">Última</Typography>
+                    ) : null
+                  }
+                >
+                  {step.label}
+                </StepLabel>
+                <StepContent>
+                  <Typography>{step.description}</Typography>
+                  <Box sx={{ mb: 2 }}>
+                    <div>
+                      <Button
+                        variant="contained"
+                        onClick={handleNext}
+                        sx={{ mt: 1, mr: 1, backgroundColor: "#37576E" }}
+                      >
+                        {index === steps.length - 1 ? "Final" : "Próxim."}
+                      </Button>
+                      <Button
+                        disabled={index === 0}
+                        onClick={handleBack}
+                        sx={{ mt: 1, mr: 1, color: "white" }}
+                      >
+                        Voltar
+                      </Button>
+                    </div>
+                  </Box>
+                </StepContent>
+              </Step>
+            ))}
+          </Stepper>
+          {activeStep === steps.length && (
+            <Paper square elevation={0} sx={{ p: 3 }}>
+              <Typography>
+                Algumas das perguntas frenquentes - <br />{" "}
+                <span
+                  onClick={() => alert("Consulte nosso blog")}
+                  style={{ color: "rgb(170, 118, 74)", cursor: "pointer" }}
+                >
+                  Quer saber mais?
+                </span>
+              </Typography>
+              <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
+                Recomeçar
+              </Button>
+            </Paper>
+          )}
+        </Box>
+        <img
+          src={image}
+          alt="alt text"
+          style={{ width: "30%", borderRadius: "20px" }}
+        />
+      </DetailsProcess>
+      <Div>
+        <img src={Gif} alt="gif agendar" style={{ width: "30%" }} />
+      </Div>
+      <Button
+        variant="outlined"
+        onClick={handleClickOpen}
+        style={{
+          border: "1px solid rgba(170,118,74, 0.5)",
+          color: "rgb(170,118,74)",
+          width: "15rem",
+          margin: "2rem 0",
+        }}
+      >
+        Agendar
+      </Button>
+      {/* <ContainerCard>
         <Card>oi</Card>
         <Card>oi</Card>
         <Card>oi</Card>
         <Card>oi</Card>
-      </ContainerCard>
+      </ContainerCard> */}
       {/* <Carousel>
         <motion.div
           ref={carouselRef}
@@ -242,18 +324,6 @@ function FashionMen() {
         </motion.div>
       </Carousel> */}
 
-      <Button
-        variant="outlined"
-        onClick={handleClickOpen}
-        style={{
-          border: "1px solid rgba(170,118,74, 0.5)",
-          color: "rgb(170,118,74)",
-          width: "15rem",
-          margin: "2rem 0",
-        }}
-      >
-        Agendar
-      </Button>
       <Dialog
         open={openDialog}
         onClose={handleClose}
@@ -409,64 +479,6 @@ function FashionMen() {
           </span>
         </h3>
       </Agendado>
-
-      <DetailsProcess>
-        <Box sx={{ maxWidth: 400 }}>
-          <Stepper activeStep={activeStep} orientation="vertical">
-            {steps.map((step, index) => (
-              <Step key={step.label} style={{ textAlign: "start" }}>
-                <StepLabel
-                  optional={
-                    index === 4 ? (
-                      <Typography variant="caption">Última</Typography>
-                    ) : null
-                  }
-                >
-                  {step.label}
-                </StepLabel>
-                <StepContent>
-                  <Typography>{step.description}</Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <div>
-                      <Button
-                        variant="contained"
-                        onClick={handleNext}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        {index === steps.length - 1 ? "Final" : "Próxim."}
-                      </Button>
-                      <Button
-                        disabled={index === 0}
-                        onClick={handleBack}
-                        sx={{ mt: 1, mr: 1 }}
-                      >
-                        Voltar
-                      </Button>
-                    </div>
-                  </Box>
-                </StepContent>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length && (
-            <Paper square elevation={0} sx={{ p: 3 }}>
-              <Typography>
-                Algumas das perguntas frenquentes - <br />{" "}
-                <span
-                  onClick={() => alert("Consulte nosso blog")}
-                  style={{ color: "rgb(170, 118, 74)", cursor: "pointer" }}
-                >
-                  Quer saber mais?
-                </span>
-              </Typography>
-              <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                Recomeçar
-              </Button>
-            </Paper>
-          )}
-        </Box>
-        <img src={image} alt="alt text" style={{ width: "30%", borderRadius: "20px" }} />
-      </DetailsProcess>
     </>
   );
 }

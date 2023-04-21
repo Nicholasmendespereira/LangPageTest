@@ -3,6 +3,8 @@ import styled from "styled-components";
 // import background from '../../assets/cortando-cabelo.jpg'
 
 export const Header = styled.header`
+  background-color: #CAD9BF;
+  position: fixed;
   display: flex;
   align-items: center;
   height: 5rem;
@@ -53,15 +55,16 @@ export const SubTittle = styled.h2`
   color: ${(props) => props.color};
 `;
 export const Main = styled.main`
-  height: 65vh;
+  height: 75vh;
   width: 100%;
   background-color: #cad9bf;
   opacity: 1;
 `;
 export const Div = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 10vh;
-  background-color: rgba(255, 255, 255, 1);
+  height: 100%;
 `;
 export const Form = styled.form`
   width: 70%;
