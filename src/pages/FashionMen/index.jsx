@@ -69,6 +69,7 @@ import img08 from "../../assets/paper08.jpg";
 import img09 from "../../assets/paper09.jpg";
 import img10 from "../../assets/paper10.jpg";
 import Gif from "../../assets/119593-agenda.gif";
+import ImageText02 from "../../assets/imageText02.png";
 
 function FashionMen() {
   const carouselRef = useRef();
@@ -211,6 +212,9 @@ function FashionMen() {
         <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
         <SubTittle color={MediumBrown}>Experimente!</SubTittle>
       </Main>
+      <Div>
+        <img src={ImageText02} alt="text alt" />
+      </Div>
       <DetailsProcess>
         <Box sx={{ maxWidth: 400 }}>
           <Stepper activeStep={activeStep} orientation="vertical">
@@ -279,7 +283,7 @@ function FashionMen() {
         variant="outlined"
         onClick={handleClickOpen}
         style={{
-          border: "1px solid rgba(170,118,74, 0.5)",
+          border: "1px solid rgba(170,118,74, 0.5)" ,
           color: "rgb(170,118,74)",
           width: "15rem",
           margin: "2rem 0",

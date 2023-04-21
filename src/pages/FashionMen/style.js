@@ -49,6 +49,8 @@ export const Header = styled.header`
 `;
 
 export const Tittle = styled.h1`
+padding-top: 12rem ;
+font-size: 3rem;
   color: ${(props) => props.color};
 `;
 export const SubTittle = styled.h2`
@@ -131,7 +133,7 @@ export const DetailsProcess = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 2rem auto;
+  margin: 0rem auto;
   padding-left: 5rem;
   width: 93.5%;
   background-image: linear-gradient(to right, #8c5c4a, rgba(64, 32, 25, 1));
