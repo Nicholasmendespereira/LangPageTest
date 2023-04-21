@@ -1,8 +1,8 @@
 import Home from './Home/index.jsx'
-import Pothography from '../src/components/Pothograph/index'
-import FashionMen from '../src/components/FashionMen/index'
-import Phone from '../src/components/Phone/index'
-import Nopage from './components/Nopage/index'
+import Pothography from '../src/pages/Pothograph/index'
+import FashionMen from '../src/pages/FashionMen/index'
+import Phone from '../src/pages/Phone/index'
+import Nopage from './pages/Nopage/index'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 

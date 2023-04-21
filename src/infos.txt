@@ -1,0 +1,12 @@
+Fazer um carrousel na onde esta a imagem 01,
+
+Colocar textos de descrição com imagens de seus respectivos
+ como: cortes masculinos e femininos(um do lado do outro);
+o Agendaemnto deverá ter em mais de uma parte para ativar catilhos de ação
+  Detalhar serviços como tempo de trabalho, produtos ultilizados e preços (talvez);
+Catilho de falta de tempo para ligar e agendar (ai então a pessoa clica no botão);
+  Formas de Avaliações de cada serviço;
+Promoções e descontos: oferecer promoções e descontos exclusivos para os visitantes 
+do site pode ser uma ótima maneira de atrair novos clientes e manter os antigos.
+
+

@@ -2,6 +2,14 @@
 
 
  @font-face {
+    font-family: 'Dancing Script';
+    src: url("../src/assets/Dancing-Script.ttf")  format('TrueType');
+}
+ @font-face {
+    font-family: 'Special Elite';
+    src: url("../src/assets/SpecialElite-Regular.ttf")  format('TrueType');
+}
+ @font-face {
     font-family: 'Nexa Bold';
     src: url("../src/assets/nexa-bold.otf")  format('opentype');
 }
