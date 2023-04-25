@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 import {
+  Body,
   Tittle,
   SubTittle,
   Header,
@@ -57,6 +58,10 @@ import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import Slide from "@mui/material/Slide";
 
 import logo from "../../assets/logosemfundo.png";
 import img01 from "../../assets/img4.jpg";
@@ -112,6 +117,7 @@ function FashionMen() {
   const [image, setImage] = useState(images[img]);
   const [formData, setFormData] = useState({});
   const [openDialog, setOpenDialog] = useState(false);
+  const [confirmPrint, setConfirmPrint] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
@@ -141,6 +147,9 @@ function FashionMen() {
   const handleClose = () => {
     setOpenDialog(false);
   };
+  const handleClosePrint = () => {
+    setConfirmPrint(false);
+  };
 
   const HandleSumit = (e) => {
     // e.preventDefault();
@@ -157,6 +166,7 @@ function FashionMen() {
       position: toast.POSITION.TOP_RIGHT,
       theme: "colored",
     });
+    setConfirmPrint(true);
   };
   // carrousel
 
@@ -189,37 +199,68 @@ function FashionMen() {
   //   }
   // };
 
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
   return (
     <>
-      <Main>
-        <Header>
-          <img src={logo} alt="logo" className="logo" />
-          <div className="barVertical">.</div>
-          <ul className="nav2">
-            <li className="iconsHeader2">
-              <AiOutlineSearch />
-            </li>
-            <li className="iconsHeader2">
-              <AiOutlineStar />
-            </li>
-            <li className="iconsHeader2">
-              <CgProfile />
-            </li>
-            <li className="iconsHeader2">
-              <AiOutlineShoppingCart />
-            </li>
-          </ul>
-        </Header>
-        <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
-        <SubTittle color={MediumBrown}>Experimente!</SubTittle>
-      </Main>
-      <Div>
-        <img src={ImageText02} alt="text alt" style={{width:"100%"}}/>
-      </Div>
-      <Div>
-        <img src={capaTeste} alt="text alt" style={{width:"100%"}}/>
-      </Div>
-      {/* <DetailsProcess>
+      <Body>
+        <Main>
+          <Header>
+            <img src={logo} alt="logo" className="logo" />
+            <div className="barVertical">.</div>
+            <ul className="nav2">
+              <li className="iconsHeader2">
+                <AiOutlineSearch />
+              </li>
+              <li className="iconsHeader2">
+                <AiOutlineStar />
+              </li>
+              <li className="iconsHeader2">
+                <CgProfile />
+              </li>
+              <li className="iconsHeader2">
+                <AiOutlineShoppingCart />
+              </li>
+            </ul>
+          </Header>
+          <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
+          <SubTittle color={MediumBrown}>Experimente!</SubTittle>
+        </Main>
+        <Div>
+          <img src={ImageText02} alt="text alt" style={{ width: "100%" }} />
+        </Div>
+        <Div>
+          <img src={capaTeste} alt="text alt" style={{ width: "100%" }} />
+        </Div>
+        {/* <DetailsProcess>
+      <Body>
+        <Main>
+          <Header>
+            <img src={logo} alt="logo" className="logo" />
+            <div className="barVertical">.</div>
+            <ul className="nav2">
+              <li className="iconsHeader2">
+                <AiOutlineSearch />
+              </li>
+              <li className="iconsHeader2">
+                <AiOutlineStar />
+              </li>
+              <li className="iconsHeader2">
+                <CgProfile />
+              </li>
+              <li className="iconsHeader2">
+                <AiOutlineShoppingCart />
+              </li>
+            </ul>
+          </Header>
+          <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
+          <SubTittle color={MediumBrown}>Experimente!</SubTittle>
+        </Main>
+        {/* <Div>
+        <img src={ImageText02} alt="text alt" />
+      </Div> */}
+        {/* <DetailsProcess>
         <Box sx={{ maxWidth: 400 }}>
           <Stepper activeStep={activeStep} orientation="vertical">
             {steps.map((step, index) => (
@@ -280,28 +321,44 @@ function FashionMen() {
           style={{ width: "30%", borderRadius: "20px" }}
         />
       </DetailsProcess> */}
-      <Div>
-        <img src={Gif} alt="gif agendar" style={{ width: "30%" }} />
-      </Div>
-      <Button
-        variant="outlined"
-        onClick={handleClickOpen}
-        style={{
-          border: "1px solid rgba(170,118,74, 0.5)" ,
-          color: "rgb(170,118,74)",
-          width: "15rem",
-          margin: "2rem 0",
-        }}
-      >
-        Agendar
-      </Button>
-      {/* <ContainerCard>
+        <Div>
+          <img src={Gif} alt="gif agendar" style={{ width: "30%" }} />
+        </Div>
+        <Button
+          variant="outlined"
+          onClick={handleClickOpen}
+          style={{
+            border: "1px solid rgba(170,118,74, 0.5)",
+            color: "rgb(170,118,74)",
+            width: "15rem",
+            margin: "2rem 0",
+          }}
+        >
+          Agendar
+        </Button>
+        {/* <ContainerCard>
+        <Div>
+          <img src={Gif} alt="gif agendar" style={{ width: "80%" }} />
+        </Div>
+        <Button
+          variant="outlined"
+          onClick={handleClickOpen}
+          style={{
+            border: "1px solid rgba(170,118,74, 0.5)",
+            color: "rgb(170,118,74)",
+            width: "15rem",
+            margin: "2rem 0",
+          }}
+        >
+          Agendar
+        </Button>
+        {/* <ContainerCard>
         <Card>oi</Card>
         <Card>oi</Card>
         <Card>oi</Card>
         <Card>oi</Card>
       </ContainerCard> */}
-      {/* <Carousel>
+        {/* <Carousel>
         <motion.div
           ref={carouselRef}
           className="carousel"
@@ -332,161 +389,182 @@ function FashionMen() {
         </motion.div>
       </Carousel> */}
 
-      <Dialog
-        open={openDialog}
-        onClose={handleClose}
-        style={{ background: "rgba(170,118,74, 0.5)" }}
-      >
-        <DialogTitle style={{ textAlign: "center", color: "gray " }}>
-          {"Vamos marcar um horário?"}
-        </DialogTitle>
-        <div style={{ width: "35rem" }}>
-          <Form>
-            <Box
-              component="form"
-              sx={{
-                "& > :not(style)": { m: 1, width: "25ch" },
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-              noValidate
-              autoComplete="off"
-            >
-              <TextField
-                style={{ width: "67%" }}
-                id="standard-basic"
-                label="Nome"
-                variant="standard"
-                className="input"
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
-              />
-              <br />
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 260 }}>
-                <InputLabel id="demo-simple-select-standard-label">
-                  Procedimento
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={formData?.process}
-                  onChange={(e) =>
-                    setFormData({ ...formData, process: e.target.value })
-                  }
-                  label="Procedimentos"
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value="brush">Escova</MenuItem>
-                  <MenuItem value="cut">Corte</MenuItem>
-                  <MenuItem value="progressive">Progressiva</MenuItem>
-                </Select>
-              </FormControl>
-              <TextField
-                style={{ width: "67%" }}
-                id="standard-basic"
-                label="Horário"
-                placeholder="horas"
-                variant="standard"
-                className="input"
-                onChange={(e) =>
-                  setFormData({ ...formData, hour: e.target.value })
-                }
-              />
-              <FormControl
-                variant="standard"
-                sx={{ m: 1, minWidth: 260 }}
-                style={{ marginTop: "2rem", marginBottom: "2.5rem" }}
-              >
-                <InputLabel id="demo-simple-select-standard-label">
-                  Manhã, Tarde ou Noite
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={formData?.shift}
-                  onChange={(e) =>
-                    setFormData({ ...formData, shift: e.target.value })
-                  }
-                  label="Manhã, Tarde ou Noite"
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value="morning">Manhã</MenuItem>
-                  <MenuItem value="afternoon">Tarde</MenuItem>
-                  <MenuItem value="night">Noite</MenuItem>
-                </Select>
-              </FormControl>
-              <div
-                style={{
+        <Dialog
+          open={openDialog}
+          onClose={handleClose}
+          style={{ background: "rgba(170,118,74, 0.5)", width: "100%" }}
+        >
+          <div style={{ width: "82vw" }}>
+            <DialogTitle style={{ textAlign: "center", color: "gray" }}>
+              {"Vamos agendar?"}
+            </DialogTitle>
+            <Form>
+              <Box
+                component="form"
+                sx={{
+                  "& > :not(style)": { m: 1, width: "25ch" },
                   display: "flex",
-                  width: "100%",
-                  marginTop: "3rem",
-                  alignItems: "center",
+                  flexDirection: "column",
                   justifyContent: "center",
-                  margin: "0 auto",
+                  alignItems: "center",
                 }}
+                noValidate
+                autoComplete="off"
               >
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DatePicker
-                    format="DD/MM/YYYY"
+                <TextField
+                  style={{ width: "88%" }}
+                  id="standard-basic"
+                  label="Nome"
+                  variant="standard"
+                  className="input"
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                />
+                <br />
+                <FormControl variant="standard" sx={{ m: 1, minWidth: "88%" }}>
+                  <InputLabel>Procedimento</InputLabel>
+                  <Select
+                    value={formData?.process}
                     onChange={(e) =>
-                      setFormData({
-                        ...formData,
-                        day: e.format("DD/MM/YYYY"),
-                      })
+                      setFormData({ ...formData, process: e.target.value })
                     }
-                  />
-                </LocalizationProvider>
-              </div>
-              <Button
-                style={{
-                  marginTop: "2.5rem",
-                  border: "1px solid rgba(170,118,74, 0.5)",
-                  color: "rgb(170,118,74)",
-                }}
-                // disabled={}
-                variant="outlined"
-                onClick={() => {
-                  HandleSumit();
-                  handleClose();
-                }}
-              >
-                Agendar
+                    label="Procedimentos"
+                  >
+                    <MenuItem value="">
+                      <em>Nenhum</em>
+                    </MenuItem>
+                    <MenuItem value="brush">Escova</MenuItem>
+                    <MenuItem value="cut">Corte</MenuItem>
+                    <MenuItem value="progressive">Progressiva</MenuItem>
+                  </Select>
+                </FormControl>
+                <TextField
+                  style={{ width: "88%" }}
+                  id="standard-basic"
+                  label="Horário"
+                  placeholder="horas"
+                  variant="standard"
+                  className="input"
+                  onChange={(e) =>
+                    setFormData({ ...formData, hour: e.target.value })
+                  }
+                />
+                <FormControl
+                  variant="standard"
+                  sx={{ m: 1, minWidth: "88%" }}
+                  style={{ marginTop: "2rem", marginBottom: "2.5rem" }}
+                >
+                  <InputLabel id="demo-simple-select-standard-label">
+                    Manhã, Tarde ou Noite
+                  </InputLabel>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={formData?.shift}
+                    onChange={(e) =>
+                      setFormData({ ...formData, shift: e.target.value })
+                    }
+                    label="Manhã, Tarde ou Noite"
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value="morning">Manhã</MenuItem>
+                    <MenuItem value="afternoon">Tarde</MenuItem>
+                    <MenuItem value="night">Noite</MenuItem>
+                  </Select>
+                </FormControl>
+                <div
+                  style={{
+                    display: "flex",
+                    width: "100%",
+                    marginTop: "3rem",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "0 auto",
+                  }}
+                >
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                      format="DD/MM/YYYY"
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          day: e.format("DD/MM/YYYY"),
+                        })
+                      }
+                    />
+                  </LocalizationProvider>
+                </div>
+                <Button
+                  style={{
+                    marginTop: "2.5rem",
+                    border: "1px solid rgba(170,118,74, 0.5)",
+                    color: "rgb(170,118,74)",
+                  }}
+                  // disabled={}
+                  variant="outlined"
+                  onClick={() => {
+                    HandleSumit();
+                    handleClose();
+                  }}
+                >
+                  Agendar
+                </Button>
+              </Box>
+            </Form>
+          </div>
+          <Button onClick={handleClose} autoFocus style={{ color: "gray" }}>
+            Sair
+          </Button>
+        </Dialog>
+        <Agendado onClick={handleClickOpen}>
+          <h3>
+            Cliente: <br />
+            <span>{formData?.name}</span>
+          </h3>
+          <h3>
+            Procedimento: <br />
+            <span>{formatProcess(formData?.process)?.label}</span>
+          </h3>
+          <h3>
+            Agendamento: <br />
+            <span>
+              <SubAgendado>
+                {formData?.hour} <small>horas, da</small>{" "}
+                <small>{formatShift(formData?.shift)?.label}</small> <br />
+                <br />
+                <small>Dia</small>: {formData?.day} <br />
+              </SubAgendado>
+            </span>
+          </h3>
+        </Agendado>
+        <div>
+          <Dialog
+            open={confirmPrint}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClosePrint}
+            aria-describedby="alert-dialog-slide-description"
+          >
+            <DialogTitle style={{ textAlign: "center", color: "#42ba96" }}>
+              {"Agendamento Enviado!"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Tire um <strong>print</strong> do seu comprovante de agendamendo
+                abaixo.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClosePrint} style={{ color: "#402019" }}>
+                Pode deixar!
               </Button>
-            </Box>
-          </Form>
+            </DialogActions>
+          </Dialog>
         </div>
-        <Button onClick={handleClose} autoFocus style={{ color: "gray" }}>
-          Sair
-        </Button>
-      </Dialog>
-      <Agendado onClick={handleClickOpen}>
-        <h3>
-          Cliente: <br />
-          <span>{formData?.name}</span>
-        </h3>
-        <h3>
-          Procedimento: <br />
-          <span>{formatProcess(formData?.process)?.label}</span>
-        </h3>
-        <h3>
-          Agendamento: <br />
-          <span>
-            <SubAgendado>
-              {formData?.hour} <small>horas,da</small>{" "}
-              <small>{formatShift(formData?.shift)?.label}</small> <br />
-              <br />
-              <small>Dia</small>: {formData?.day} <br />
-            </SubAgendado>
-          </span>
-        </h3>
-      </Agendado>
+      </Body>
     </>
   );
 }
