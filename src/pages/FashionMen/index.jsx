@@ -70,6 +70,7 @@ import img09 from "../../assets/paper09.jpg";
 import img10 from "../../assets/paper10.jpg";
 import Gif from "../../assets/119593-agenda.gif";
 import ImageText02 from "../../assets/imageText02.png";
+import capaTeste from "../../assets/capaTeste.png";
 
 function FashionMen() {
   const carouselRef = useRef();
@@ -213,9 +214,12 @@ function FashionMen() {
         <SubTittle color={MediumBrown}>Experimente!</SubTittle>
       </Main>
       <Div>
-        <img src={ImageText02} alt="text alt" />
+        <img src={ImageText02} alt="text alt" style={{width:"100%"}}/>
       </Div>
-      <DetailsProcess>
+      <Div>
+        <img src={capaTeste} alt="text alt" style={{width:"100%"}}/>
+      </Div>
+      {/* <DetailsProcess>
         <Box sx={{ maxWidth: 400 }}>
           <Stepper activeStep={activeStep} orientation="vertical">
             {steps.map((step, index) => (
@@ -275,7 +279,7 @@ function FashionMen() {
           alt="alt text"
           style={{ width: "30%", borderRadius: "20px" }}
         />
-      </DetailsProcess>
+      </DetailsProcess> */}
       <Div>
         <img src={Gif} alt="gif agendar" style={{ width: "30%" }} />
       </Div>

@@ -136,7 +136,7 @@ export const DetailsProcess = styled.div`
   align-items: center;
   margin: 0rem auto;
   padding-left: 5rem;
-  width: 93.5%;
+  width: 100%;
   background-image: linear-gradient(to right, #8c5c4a, rgba(64, 32, 25, 1));
   height: 100vh;
 `;
