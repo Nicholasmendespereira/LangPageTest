@@ -26,6 +26,11 @@ import {
   HardBrown,
   Black,
   GreenLigth,
+  lightGray,
+  MediumGray,
+  HardGray,
+  SemiBlack,
+  BlackBlack
 } from "../../styles/colorProvider.js";
 import { useState } from "react";
 import moment from "moment";
@@ -224,14 +229,14 @@ function FashionMen() {
               </li>
             </ul>
           </Header>
-          <Tittle color={HardBrown}>Sua barbearia como nunca!</Tittle>
-          <SubTittle color={MediumBrown}>Experimente!</SubTittle>
+          <Tittle color={HardGray}>Sua barbearia como nunca!</Tittle>
+          <SubTittle color={SemiBlack}>Experimente!</SubTittle>
         </Main>
         <Div>
           <img src={ImageText02} alt="text alt" style={{ width: "100%" }} />
         </Div>
         <Div>
-          <img src={capaTeste} alt="text alt" style={{ width: "100%" }} />
+        <img src={capaTeste} alt="text alt" style={{ width: "100%"}} />
         </Div>
         {/* <DetailsProcess>
       <Body>
@@ -322,7 +327,7 @@ function FashionMen() {
         />
       </DetailsProcess> */}
         <Div>
-          <img src={Gif} alt="gif agendar" style={{ width: "30%" }} />
+          <img src={Gif} alt="gif agendar" style={{ width: "80%" }} />
         </Div>
         <Button
           variant="outlined"
