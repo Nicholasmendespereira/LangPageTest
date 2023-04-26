@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 // import background from '../../assets/cortando-cabelo.jpg'
-
+export const Body = styled.body`
+  width: 100vw;
+`;
 export const Header = styled.header`
+  background-color: #eeba2b;
+  position: fixed;
+  margin-top: -0.2rem;
   display: flex;
   align-items: center;
   height: 5rem;
-  width: 100%;
+  width: 100vw;
   .logo {
     width: 8%;
   }
@@ -47,30 +52,35 @@ export const Header = styled.header`
 `;
 
 export const Tittle = styled.h1`
+  padding-top: 30%;
+  font-size: 2.2rem;
+  font-family: "Dancing Script";
   color: ${(props) => props.color};
 `;
 export const SubTittle = styled.h2`
   color: ${(props) => props.color};
+  font-family: "Dancing Script";
 `;
 export const Main = styled.main`
-  height: 65vh;
+  height: 45vh;
   width: 100%;
-  background-color: #cad9bf;
+  background-color: #191a1e;
   opacity: 1;
 `;
 export const Div = styled.div`
+  display: flex;
+  justify-content: center;
   width: 100%;
-  height: 10vh;
-  background-color: rgba(255, 255, 255, 1);
+  height: 100%;
 `;
 export const Form = styled.form`
-  width: 70%;
+  width: 95%;
   margin: 2rem auto;
   padding-bottom: 10px;
   border: 1px solid rgba(170, 118, 74, 0.5);
   .input {
     width: 50%;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
   }
 `;
 export const Carousel = styled.div`
@@ -95,21 +105,20 @@ export const Carousel = styled.div`
   }
 `;
 export const Agendado = styled.div`
-  font-family: "Special Elite";
-  width: 25%;
-  height: 20%;
-  border: 1px dashed lightgrey;
+  /* font-family: "Special Elite"; */
+  font-family: "Dancing Script";
+  width: 80vw;
+  height: 20rem;
+  border: 1.5px dashed lightgrey;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
   color: gray;
   padding: 1rem;
   h3 {
     color: lightgray;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
   }
   span {
     font-family: "Dancing Script";
@@ -117,20 +126,20 @@ export const Agendado = styled.div`
   }
 `;
 export const SubAgendado = styled.div`
-  padding: 0.5rem;
-  margin-top: 5%;
-  width: 100%;
-  height: 100%;
-  border: 1px dashed lightgrey;
+  padding-top: 1rem;
+  margin: 5% auto;
+  width: 80%;
+  height: 80%;
+  border: 1.5px dashed lightgrey;
   border-radius: 10px;
 `;
 export const DetailsProcess = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 2rem auto;
+  margin: 0rem auto;
   padding-left: 5rem;
-  width: 93.5%;
+  width: 100%;
   background-image: linear-gradient(to right, #8c5c4a, rgba(64, 32, 25, 1));
   height: 100vh;
 `;
