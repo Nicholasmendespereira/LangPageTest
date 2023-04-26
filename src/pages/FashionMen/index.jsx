@@ -30,7 +30,7 @@ import {
   MediumGray,
   HardGray,
   SemiBlack,
-  BlackBlack
+  BlackBlack,
 } from "../../styles/colorProvider.js";
 import { useState } from "react";
 import moment from "moment";
@@ -94,6 +94,24 @@ function FashionMen() {
     // img09,
     // img10,
   ];
+  function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  const [NumberRamdon, setNumberRamdon] = useState(0);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      for (var i = 0; i < 100; i++) {
+        setTimeout(() => {
+          setNumberRamdon(getRandomIntInclusive(0, 4));
+        }, 2000);
+      }
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [NumberRamdon]);
+
   const steps = [
     {
       label: "Oque é Hidratação capilar?",
@@ -117,6 +135,7 @@ function FashionMen() {
       description: `O Corte de cabelo é o que define o estilo visual dos cabelos e consequentemente, o estilo visual da pessoa. Acompanhar o design do corte, com a personalidade da pessoa, torna a mesma mais autentica e única, pois ela será representada por si mesma.`,
     },
   ];
+
   const [width, setWidth] = useState(0);
   const [img, setImg] = useState(0);
   const [image, setImage] = useState(images[img]);
@@ -229,14 +248,15 @@ function FashionMen() {
               </li>
             </ul>
           </Header>
-          <Tittle color={HardGray}>Sua barbearia como nunca!</Tittle>
-          <SubTittle color={SemiBlack}>Experimente!</SubTittle>
+          <Tittle color={"#eeba2b"}>Sua barbearia como nunca!</Tittle>
+          <SubTittle color={"#ffd7"}>Experimente!</SubTittle>
+          <SubTittle color={"#ffd7"}>{steps[NumberRamdon].label}</SubTittle>
         </Main>
         <Div>
           <img src={ImageText02} alt="text alt" style={{ width: "100%" }} />
         </Div>
         <Div>
-        <img src={capaTeste} alt="text alt" style={{ width: "100%"}} />
+          <img src={capaTeste} alt="text alt" style={{ width: "100%" }} />
         </Div>
         {/* <DetailsProcess>
       <Body>

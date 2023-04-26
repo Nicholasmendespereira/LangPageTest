@@ -13,3 +13,6 @@ export const HardGray = '#3b3c42'
 export const SemiBlack = '#191a1e'
 export const BlackBlack = '#0a0a0b'
 export const sucess = '#42ba96'
+
+//TEMA GOLD BLACK
+export const gold = '#eeba2b'

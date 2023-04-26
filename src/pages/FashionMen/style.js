@@ -5,7 +5,7 @@ export const Body = styled.body`
   width: 100vw;
 `;
 export const Header = styled.header`
-  background-color: #929daa;
+  background-color: #eeba2b;
   position: fixed;
   margin-top: -0.2rem;
   display: flex;
@@ -64,7 +64,7 @@ export const SubTittle = styled.h2`
 export const Main = styled.main`
   height: 45vh;
   width: 100%;
-  background-color: #929daa;
+  background-color: #191a1e;
   opacity: 1;
 `;
 export const Div = styled.div`
